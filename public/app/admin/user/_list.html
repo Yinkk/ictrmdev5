@@ -1,0 +1,23 @@
+<h1>User Listing</h1>
+<button ui-sref="add" >Add User</button>
+<table>
+    <thead>
+    <tr>
+        <td>ID</td>
+        <td>Username</td>
+        <td>Fist Name - Last Name</td>
+        <td>ACTION</td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="user in users">
+        <td>{{user.id}}</td>
+        <td>{{user.username}}</td>
+        <td>{{user.firstname}} {{user.lastname}}</td>
+        <td>
+            <button ui-sref="edit({id:user.id})">EDIT</button>
+            <button ng-click="delete(user)">Delete</button>
+        </td>
+    </tr>
+    </tbody>
+</table>
