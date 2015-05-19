@@ -13,8 +13,6 @@ class UserApiController extends Controller {
     {
         $this->service = $userService;
     }
-
-
     /**
 	 * Display a listing of the resource.
 	 *

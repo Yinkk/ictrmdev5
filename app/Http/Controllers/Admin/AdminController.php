@@ -24,4 +24,8 @@ class AdminController extends  Controller {
     public function role(){
         return view("admin.role");
     }
+
+    public function news(){
+        return view("admin.news");
+    }
 }

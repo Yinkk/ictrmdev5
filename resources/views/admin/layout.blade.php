@@ -8,6 +8,7 @@
     <div id="nav">
         <ul>
             <li><a href="/admin/home">Home</a></li>
+            <li><a href="/admin/news">news</a></li>
             <li><a href="/admin/user">User</a></li>
             <li><a href="/admin/role">Role</a></li>
         </ul>
