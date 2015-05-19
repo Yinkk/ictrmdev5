@@ -1,0 +1,23 @@
+<h1>Budget Listing</h1>
+<button ui-sref="add" >Add Budget</button>
+<table>
+    <thead>
+    <tr>
+        <td>ID</td>
+        <td>Budget Year</td>
+        <td>Budget</td>
+        <td>ACTION</td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="budget in budgets">
+        <td>{{budget.id}}</td>
+        <td>{{budget.year}}</td>
+        <td>{{budget.budget}}</td>
+        <td>
+            <button ui-sref="edit({id:budget.id})">EDIT</button>
+            <button ng-click="delete(budget)">Delete</button>
+        </td>
+    </tr>
+    </tbody>
+</table>

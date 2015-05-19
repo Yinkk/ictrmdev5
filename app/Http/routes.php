@@ -28,9 +28,17 @@ Route::group(['prefix' => 'api'], function () {
     // api/user/XXX
     Route::resource('user', 'Api\UserApiController');
     Route::resource('news', 'Api\NewsApiController');
+    Route::resource('role', 'Api\RoleApiController');
+    Route::resource('major', 'Api\MajorApiController');
+    Route::resource('budget', 'Api\BudgetApiController');
+    Route::resource('faculty', 'Api\FacultyApiController');
 });
 
 Route::get('/admin/home', 'Admin\AdminController@index');
 Route::get('/admin/user', 'Admin\AdminController@user');
 Route::get('/admin/role', 'Admin\AdminController@role');
 Route::get('/admin/news', 'Admin\AdminController@news');
+Route::get('/admin/major', 'Admin\AdminController@major');
+Route::get('/admin/budget', 'Admin\AdminController@budget');
+Route::get('/admin/faculty', 'Admin\AdminController@faculty');
+

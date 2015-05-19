@@ -1,0 +1,25 @@
+
+
+<h1>Faculty Listing</h1>
+<button ui-sref="add" >Add Faculty</button>
+<table>
+    <thead>
+    <tr>
+        <td>ID</td>
+        <td>Faculty Name TH</td>
+        <td>Faculty Name ENG</td>
+        <td>ACTION</td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="faculty in facultys">
+        <td>{{faculty.id}}</td>
+        <td>{{faculty.name_th}}</td>
+        <td>{{faculty.name_eng}}</td>
+        <td>
+            <button ui-sref="edit({id:faculty.id})">EDIT</button>
+            <button ng-click="delete(faculty)">Delete</button>
+        </td>
+    </tr>
+    </tbody>
+</table>

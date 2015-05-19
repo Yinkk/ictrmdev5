@@ -1,18 +1,23 @@
 <h1>List News</h1>
-<button ng-sref="add">Add news</button>
+<button ui-sref="add">Add news</button>
 <table>
     <thead>
     <tr>
         <th>ID</th>
         <th>Title</th>
         <th>Detail</th>
+        <th>Action</th>
     </tr>
     </thead>
     <tbody>
-    <tr>
-        <td>xxx</td>
-        <td>xxx</td>
-        <td>xxx</td>
+    <tr ng-repeat="news in news">
+        <td>{{ news.id }}</td>
+        <td>{{ news.title }}</td>
+        <td>{{ news.detail }}</td>
+        <td>
+            <button ui-sref="edit({id:news.id})">EDIT</button>
+            <button ng-click="delete(news)">Delete</button>
+        </td>
     </tr>
     </tbody>
 </table>

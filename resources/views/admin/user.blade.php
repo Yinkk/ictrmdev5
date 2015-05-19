@@ -4,8 +4,6 @@
     <div id="UserListing" ng-app="UserApp">
         <ui-view></ui-view>
     </div>
-
-
 @stop
 
 
@@ -37,15 +35,14 @@
                         controller: "AddCtrl",
                         resolve: {}
                     })
-                    .
-                    state('edit', {
+                    .state('edit', {
                         url: "/edit/:id",
                         templateUrl: "/app/admin/user/_edit.html",
                         controller: "EditCtrl",
                         resolve: {
-                            user : function($http,$stateParams){
+                            user: function ($http, $stateParams) {
                                 return $http({
-                                    url: "/api/user/"+$stateParams.id+"/edit",
+                                    url: "/api/user/" + $stateParams.id + "/edit",
                                     method: 'get'
                                 })
                             }
@@ -60,15 +57,15 @@
             $scope.users = users.data;
 
 
-            $scope.delete = function(user){
-                if(confirm("Are you sure to delete this user [id:" +user.id+"]?")){
+            $scope.delete = function (user) {
+                if (confirm("Are you sure to delete this user [id:" + user.id + "]?")) {
                     $http({
-                        url: '/api/user/'+user.id,
+                        url: '/api/user/' + user.id,
                         method: 'delete',
                         data: user
                     }).success(function (response) {
                         var index = $scope.users.indexOf(user);
-                        $scope.users.splice(index,1);
+                        $scope.users.splice(index, 1);
                     })
                 }
             }
@@ -94,7 +91,7 @@
 
         })
 
-        app.controller("EditCtrl", function ($scope, $http, $state,user) {
+        app.controller("EditCtrl", function ($scope, $http, $state, user) {
             console.log("EditCtrl Start...")
 
             $scope.user = user.data;
@@ -102,7 +99,7 @@
             $scope.save = function () {
                 console.log($scope.user);
                 $http({
-                    url: '/api/user/'+$scope.user.id,
+                    url: '/api/user/' + $scope.user.id,
                     method: 'put',
                     data: $scope.user
                 }).success(function (response) {

@@ -1,0 +1,23 @@
+<h1>Major Listing</h1>
+<button ui-sref="add" >Add Major</button>
+<table>
+    <thead>
+    <tr>
+        <td>ID</td>
+        <td>Name TH</td>
+        <td>Name ENG</td>
+        <td>ACTION</td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="major in majors">
+        <td>{{major.id}}</td>
+        <td>{{major.name_th}}</td>
+        <td>{{major.name_eng}}</td>
+        <td>
+            <button ui-sref="edit({id:major.id})">EDIT</button>
+            <button ng-click="delete(major)">Delete</button>
+        </td>
+    </tr>
+    </tbody>
+</table>

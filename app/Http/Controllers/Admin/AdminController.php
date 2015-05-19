@@ -28,4 +28,17 @@ class AdminController extends  Controller {
     public function news(){
         return view("admin.news");
     }
+
+    public function major(){
+        return view("admin.major");
+    }
+
+    public function budget(){
+        return view("admin.budget");
+    }
+
+    public function faculty(){
+        return view("admin.faculty");
+    }
+
 }

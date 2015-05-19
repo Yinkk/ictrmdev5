@@ -1,0 +1,21 @@
+<h1>Role Listing</h1>
+<button ui-sref="add" >Add Role</button>
+<table>
+    <thead>
+    <tr>
+        <td>ID</td>
+        <td>Role Name</td>
+        <td>ACTION</td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="role in roles">
+        <td>{{role.id}}</td>
+        <td>{{role.name}}</td>
+        <td>
+            <button ui-sref="edit({id:role.id})">EDIT</button>
+            <button ng-click="delete(role)">Delete</button>
+        </td>
+    </tr>
+    </tbody>
+</table>
