@@ -1,10 +1,179 @@
-<h1>Edit User</h1>
-<form ng-submit="save()">
-    Username : <input type="text" ng-model="user.username"/> </br>
-    Password : <input type="text" ng-model="user.password"/> </br>
-    First Name : <input type="text" ng-model="user.firstname"/> </br>
-    Last Name : <input type="text" ng-model="user.lastname"/> </br>
+<form ng-submit="save()" class="form form-horizontal">
+    <div class="page-header">
+        <h3>
+            นักวิจัย
+            <small>แก้ไขข้อมูลนักวิจัย</small>
 
-    <button type="submit">Submit</button>
-    <button ui-sref="list">Cancel</button>
+            <div class="pull-right">
+                <a ui-sref="list" class="btn btn-sm btn-default"><i
+                        class="fa fa-reply"></i>กลับ</a>
+            </div>
+        </h3>
+    </div>
+
+    <div class="col-lg-8">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                ชื่อผู้ใช้-รหัสผ่าน
+            </div>
+            <div class="panel-body">
+                <div class="form-group">
+                    <label class="control-label col-md-2">ชื่อผู้ใช้ :</label>
+
+                    <div class="col-md-5">
+                        <input type="text" name="username" class="form-control" ng-model="user.username">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-md-2">รหัสผ่าน :</label>
+
+                    <div class="col-md-5">
+                        <input type="password" name="password" class="form-control" ng-model="user.password">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-8">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                ชื่อ-นามสกุล
+            </div>
+            <div class="panel-body">
+                <div class="form-group">
+                    <label class="control-label col-md-2">คำนำหน้า (th) :</label>
+
+                    <div class="col-md-5">
+                        <input type="text" name="prefixname_th" class="form-control" ng-model="user.prefixname_th">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-md-2">ชื่อ (th) :</label>
+
+                    <div class="col-md-5">
+                        <input type="text" name="firstname_th" class="form-control" ng-model="user.firstname_th">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-md-2">นามสกุล (th) :</label>
+
+                    <div class="col-md-5">
+                        <input type="text" name="lastname_th" class="form-control" ng-model="user.lastname_th">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-md-2">คำนำหน้า (en) :</label>
+
+                    <div class="col-md-5">
+                        <input type="text" name="prefixname_en" class="form-control" ng-model="user.prefixname_en">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-md-2">ชื่อ (en) :</label>
+
+                    <div class="col-md-5">
+                        <input type="text" name="firstname_en" class="form-control" ng-model="user.firstname_en">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-md-2">นามสกุล (en) :</label>
+
+                    <div class="col-md-5">
+                        <input type="text" name="lastname_en" class="form-control" ng-model="user.lastname_en">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-8">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                คณะ/หน่วยงาน/ตำแหน่ง
+            </div>
+            <div class="panel-body">
+                <div class="form-group">
+                    <label class="control-label col-md-2">คณะ/หน่วยงาน :</label>
+
+                    <div class="col-md-5">
+                        <input type="text" name="user_faculty" class="form-control" ng-model="user.user_faculty">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-md-2">สาขาวิชา :</label>
+
+                    <div class="col-md-5">
+                        <input type="text" name="user_major" class="form-control" ng-model="user.user_major">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-md-2">ประเภทตำแหน่ง :</label>
+
+                    <div class="col-md-5">
+                        <input type="text" name="user_type" class="form-control" ng-model="user.user_type">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-md-2">ตำแหน่งทางวิชาการ :</label>
+
+                    <div class="col-md-5">
+                        <input type="text" name="user_position" class="form-control" ng-model="user.user_position">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-8">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                การศึกษา
+            </div>
+            <div class="panel-body">
+                <div class="form-group">
+                    <label class="control-label col-md-2">ระดับการศึกษาสูงสุด :</label>
+
+                    <div class="col-md-5">
+                        <input type="text" name="user_education" class="form-control" ng-model="user.user_education">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-md-2">ชื่อปริญญา :</label>
+
+                    <div class="col-md-5">
+                        <input type="text" name="user_degree" class="form-control" ng-model="user.user_degree">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-md-2">สถานศึกษาที่สำเร็จ :</label>
+
+                    <div class="col-md-5">
+                        <input type="text" name="user_institution" class="form-control"
+                               ng-model="user.user_institution">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-8">
+        <div class="form-group">
+            <div class="col-md-offset-4">
+                <button type="submit" class="btn btn-primary">บันทึกข้อมูล</button>
+                <button ui-sref="list" class="btn btn-danger">ยกเลิก</button>
+            </div>
+        </div>
+    </div>
 </form>

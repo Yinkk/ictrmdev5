@@ -1,23 +1,45 @@
-<h1>Major Listing</h1>
-<button ui-sref="add" >Add Major</button>
-<table>
-    <thead>
-    <tr>
-        <td>ID</td>
-        <td>Name TH</td>
-        <td>Name ENG</td>
-        <td>ACTION</td>
-    </tr>
-    </thead>
-    <tbody>
-    <tr ng-repeat="major in majors">
-        <td>{{major.id}}</td>
-        <td>{{major.name_th}}</td>
-        <td>{{major.name_eng}}</td>
-        <td>
-            <button ui-sref="edit({id:major.id})">EDIT</button>
-            <button ng-click="delete(major)">Delete</button>
-        </td>
-    </tr>
-    </tbody>
-</table>
+<div class="page-header">
+    <h3>
+        Major
+        <div class="pull-right">
+            <button ui-sref="add" class="btn btn-sm btn-primary"><i class="fa fa-plus-circle"></i>Add Major</button>
+        </div>
+    </h3>
+</div>
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                DataTables Major Listing
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <table class="table table-bordered">
+                        <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name TH</th>
+                            <th>Name ENG</th>
+                            <th>ACTION</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr ng-repeat="major in majors">
+                            <td>{{major.id}}</td>
+                            <td>{{major.name_th}}</td>
+                            <td>{{major.name_eng}}</td>
+                            <td>
+                                <button ui-sref="edit({id:major.id})" class="btn btn-sm btn-info"><i
+                                        class="fa fa-edit"></i></button>
+                                <button ng-click="delete(major)" class="btn btn-sm btn-danger"><i
+                                        class="fa fa-trash"></i></button>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

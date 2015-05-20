@@ -1,7 +1,7 @@
 @extends('admin.layout')
 
 @section('content')
-    HOME
+Admin Page
 @stop
 
 @section('javascript')

@@ -4,23 +4,24 @@
     <mata charset="utf-8">
         <title>ระบบบริหารงานวิจัยคณะเทคโนโลยีสารสนเทศและการสื่อสาร</title>
 
+        <link href="/bower_components/bootstrap/dist/css/justified-nav.css" rel="stylesheet"/>
         <!-- CSS Admin Theme -->
-        <link href="/admin_theme/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"/>
+        <link href="/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"/>
         <!-- MetisMenu CSS -->
-        <link href="/admin_theme/bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet"/>
+        <link href="/bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet"/>
         <!-- Timeline CSS -->
-        <link href="/admin_theme/dist/css/timeline.css" rel="stylesheet"/>
+        <link href="/bower_components/sb-admin-v2/css/plugins/timeline/timeline.css" rel="stylesheet"/>
         <!-- Morris Charts CSS -->
-        <link href="/admin_theme/bower_components/morrisjs/morris.css" rel="stylesheet"/>
+        <link href="/bower_components/metisMenu/dist/metisMenu.css" rel="stylesheet"/>
         <!-- Custom Fonts -->
-        <link href="/admin_theme/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+        <link href="/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
         <!-- DataTables CSS -->
-        <link href="/admin_theme/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css" rel="stylesheet"/>
+        <link href="/bower_components/datatables-bootstrap3/BS3/assets/css/datatables.css" rel="stylesheet"/>
         <!-- DataTables Responsive CSS -->
-        <link href="/admin_theme/bower_components/datatables-responsive/css/dataTables.responsive.css" rel="stylesheet"/>
+        <link href="/bower_components/datatables-responsive/css/dataTables.responsive.css" rel="stylesheet"/>
         <!-- Custom CSS -->
-        <link href="/admin_theme/dist/css/sb-admin-2.css" rel="stylesheet"/>
-       
+        <link href="/bower_components/startbootstrap-sb-admin-2/dist/css/sb-admin-2.css" rel="stylesheet"/>
+
     </mata>
 </head>
 
@@ -55,7 +56,7 @@
                     <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
                     </li>
                     <li class="divider"></li>
-                    <li><a href="http://localhost/laravelProject/ictrmdev/login/logout"><i
+                    <li><a href="#"><i
                                     class="fa fa-sign-out fa-fw"></i>Logout</a>
                     </li>
                 </ul>
@@ -81,8 +82,8 @@
                             </li>
                         </ul>
                     </li>
-                    <li><a href="#"><i class="fa fa-newspaper-o"></i>ข้อมูลข่าว</a></li>
-                    <li><a href="#"><i class="fa fa-users"></i></i>ข้อมูลนักวิจัย</a></li>
+                    <li><a href="/admin/news"><i class="fa fa-newspaper-o"></i>ข้อมูลข่าว</a></li>
+                    <li><a href="/admin/user"><i class="fa fa-users"></i></i>ข้อมูลนักวิจัย</a></li>
                     <li><a href="#"><i class="fa fa-bar-chart-o fa-fw"></i>ข้อมูลงานวิจัย<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level collapse">
                             <li>
@@ -109,7 +110,7 @@
         <!-- /.navbar-static-side -->
     </nav>
 
-    <div id="page-wrapper" style="min-height: 383px;">
+    <div id="page-wrapper" style="min-height: 400px;">
         <div class="row">
 
             @yield('content')
@@ -119,38 +120,28 @@
     <!-- /#page-wrapper -->
 </div>
 
+<footer class="well" style="margin-top: 20px;" align="center">
+    &copy; 2015 ระบบบริหารงานวิจัยคณะเทคโนโลยีสารสนเทศและการสื่อสาร <a href="{{ url('admin') }}">Backend</a>
+</footer>
 <!-- JavaScript Admin Theme -->
 <!-- jQuery -->
-<script src="/admin_theme/bower_components/jquery/dist/jquery.min.js"></script>
+<script src="/bower_components/jquery/dist/jquery.min.js"></script>
+<script src="/bower_components/datatables/media/js/jquery.dataTables.min.js"></script>
 
 <!-- Bootstrap Core JavaScript -->
-<script src="/admin_theme/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
-<!-- Metis Menu Plugin JavaScript -->
-<script src="/admin_theme/bower_components/metisMenu/dist/metisMenu.min.js"></script>
+<!-- Metis Menu Plugin JavaScript-->
+<script src="/bower_components/metisMenu/dist/metisMenu.min.js"></script>
+<script src="/bower_components/sb-admin-v2/js/sb-admin.js"></script>
 
-<!-- Morris Charts JavaScript -->
-<script src="/admin_theme/bower_components/raphael/raphael-min.js"></script>
-<script src="/admin_theme/bower_components/morrisjs/morris.min.js"></script>
-
-<!-- Custom Theme JavaScript -->
-<script src="/admin_theme/bower_components/datatables/media/js/jquery.dataTables.min.js"></script>
-<script src="/admin_theme/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js"></script>
-<script src="/admin_theme/dist/js/sb-admin-2.js"></script>
-
-
-<script type="text/javascript" src="/angular/angular/angular.min.js"></script>
-<script type="text/javascript" src="/angular/angular-ui-router/release/angular-ui-router.min.js"></script>
-
-<script>
-    $(document).ready(function () {
-        $('#dataTables-example').DataTable({
-            responsive: true
-        });
-    });
-</script>
+<script type="text/javascript" src="/bower_components/angular/angular.min.js"></script>
+<script type="text/javascript" src="/bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+<script type="text/javascript" src="/bower_components/angular-datatables/dist/angular-datatables.min.js"></script>
+<script type="text/javascript" src="/bower_components/angular-datatables/dist/plugins/bootstrap/angular-datatables.bootstrap.min.js"></script>
 
 @yield('javascript')
+
 </body>
 
 </html>

@@ -9,7 +9,7 @@
 
 @section('javascript')
     <script type="text/javascript">
-        var app = angular.module("UserApp", ['ui.router']);
+        var app = angular.module("UserApp", ['ui.router','datatables','datatables.bootstrap']);
 
         app.config(function ($stateProvider, $urlRouterProvider) {
 
@@ -50,12 +50,13 @@
                     })
         });
 
-        app.controller("ListCtrl", function ($scope, $http, users) {
+        app.controller("ListCtrl", function ($scope, $http, users,DTOptionsBuilder) {
 
             console.log("ListCtrl Start...")
             console.log(users);
             $scope.users = users.data;
 
+            //$scope.dtOptions = {}
 
             $scope.delete = function (user) {
                 if (confirm("Are you sure to delete this user [id:" + user.id + "]?")) {

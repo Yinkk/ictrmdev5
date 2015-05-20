@@ -1,8 +1,36 @@
-<h1>Add Budget</h1>
-<form ng-submit="save()">
-    Budget Year : <input type="text" ng-model="budget.year"/> </br>
-    Budget : <input type="text" ng-model="budget.budget"/> </br>
+<form ng-submit="save()" class="form form-horizontal">
+    <div class="page-header">
+        <h3>
+            Budget
+            <small>Create</small>
 
-    <button type="submit">Submit</button>
-    <button ui-sref="list">Cancel</button>
+            <div class="pull-right">
+                <a ui-sref="list" class="btn btn-sm btn-default"><i
+                        class="fa fa-reply"></i>Back</a>
+            </div>
+        </h3>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">Budget Year :</label>
+
+        <div class="col-md-5">
+            <input type="text" name="year" class="form-control" ng-model="budget.year" >
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2"> Budget :</label>
+
+        <div class="col-md-5">
+            <input type="text" name="budget" class="form-control" ng-model="budget.budget">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2">
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <button ui-sref="list" class="btn btn-danger">Cancel</button>
+        </div>
+    </div>
 </form>

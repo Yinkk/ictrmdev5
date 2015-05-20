@@ -1,21 +1,43 @@
-<h1>Role Listing</h1>
-<button ui-sref="add" >Add Role</button>
-<table>
-    <thead>
-    <tr>
-        <td>ID</td>
-        <td>Role Name</td>
-        <td>ACTION</td>
-    </tr>
-    </thead>
-    <tbody>
-    <tr ng-repeat="role in roles">
-        <td>{{role.id}}</td>
-        <td>{{role.name}}</td>
-        <td>
-            <button ui-sref="edit({id:role.id})">EDIT</button>
-            <button ng-click="delete(role)">Delete</button>
-        </td>
-    </tr>
-    </tbody>
-</table>
+<div class="page-header">
+    <h3>
+        Role
+        <div class="pull-right">
+            <button ui-sref="add" class="btn btn-sm btn-primary"><i class="fa fa-plus-circle"></i>Add Role</button>
+        </div>
+    </h3>
+</div>
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                DataTables Role Listing
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <table class="table table-bordered">
+                        <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Role Name</th>
+                            <th>ACTION</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr ng-repeat="role in roles">
+                            <td>{{role.id}}</td>
+                            <td>{{role.name}}</td>
+                            <td>
+                                <button ui-sref="edit({id:role.id})" class="btn btn-sm btn-info"><i
+                                        class="fa fa-edit"></i></button>
+                                <button ng-click="delete(role)" class="btn btn-sm btn-danger"><i
+                                        class="fa fa-trash"></i></button>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
