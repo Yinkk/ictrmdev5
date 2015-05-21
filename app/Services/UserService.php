@@ -29,7 +29,7 @@ class UserService extends Service {
     {
         $this->with_array = $with_array;
     }
-    
+
     public function all(){
         return User::with($this->with_array)->get();
     }

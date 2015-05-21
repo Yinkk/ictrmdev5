@@ -99,11 +99,15 @@
                 คณะ/หน่วยงาน/ตำแหน่ง
             </div>
             <div class="panel-body">
-                <div class="form-group">
-                    <label class="control-label col-md-2">คณะ/หน่วยงาน :</label>
 
-                    <div class="col-md-5">
-                        <input type="text" name="user_faculty" class="form-control" ng-model="user.user_faculty">
+                <div class="form-group">
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                            คณะ/หน่วยงาน : <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" role="menu">
+                            <li ng-repeat="faculty in facultys" ng-click=""><a>{{faculty.name_th}}</a></li>
+                        </ul>
                     </div>
                 </div>
 
@@ -174,7 +178,7 @@
                 Group
             </div>
             <div class="panel-body">
-                <div class="btn-group" name="user_role">
+                <div class="btn-group">
                     <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                         Action <span class="caret"></span>
                     </button>

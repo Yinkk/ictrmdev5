@@ -39,6 +39,12 @@
                                     url: "/api/role",
                                     method: 'get'
                                 })
+                            },
+                            facultys: function ($http) {
+                                return $http({
+                                    url: "/api/faculty",
+                                    method: 'get'
+                                })
                             }
                         }
                     })
@@ -56,6 +62,12 @@
                             roles: function ($http) {
                                 return $http({
                                     url: "/api/role",
+                                    method: 'get'
+                                })
+                            },
+                            facultys: function ($http) {
+                                return $http({
+                                    url: "/api/faculty",
                                     method: 'get'
                                 })
                             }
@@ -86,7 +98,7 @@
 
         })
 
-        app.controller("AddCtrl", function ($scope, $http, $state, roles) {
+        app.controller("AddCtrl", function ($scope, $http, $state, roles, facultys) {
             console.log("AddCtrl Start......")
             //console.log(roles)
 
@@ -94,6 +106,7 @@
                 roles : []
             };
             $scope.roles = roles.data
+            $scope.facultys = facultys.data
 
             $scope.save = function () {
                 console.log($scope.user);
@@ -128,11 +141,15 @@
 
         })
 
-        app.controller("EditCtrl", function ($scope, $http, $state, user, roles) {
+        app.controller("EditCtrl", function ($scope, $http, $state, user, roles, facultys) {
             console.log("EditCtrl Start...")
-
+            //console.log(facultys)
+           // $scope.user = {
+           //     facultys : []
+           // };
             $scope.user = user.data;
             $scope.roles = roles.data;
+            $scope.facultys = facultys.data;
 
             $scope.addRole = function(role){
                 found = false;
@@ -162,7 +179,6 @@
                     $state.go('list');
                 })
             }
-
         })
     </script>
 @stop
