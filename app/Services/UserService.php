@@ -12,14 +12,30 @@ use App\Models\User;
 
 class UserService extends Service {
 
-    var $with_array = [];
+    var $with_array = ['roles'];
 
+    /**
+     * @return array
+     */
+    public function getWithArray()
+    {
+        return $this->with_array;
+    }
+
+    /**
+     * @param array $with_array
+     */
+    public function setWithArray($with_array)
+    {
+        $this->with_array = $with_array;
+    }
+    
     public function all(){
-         return User::all();
+        return User::with($this->with_array)->get();
     }
 
     public function get($id){
-        return User::find($id);
+        return User::with($this->with_array)->find($id);
     }
 
     public function create(){
@@ -30,6 +46,7 @@ class UserService extends Service {
         $user = new User();
         $user->fill($input);
         $user->save();
+        $this->linkToRole($user,$input);
         return $user;
     }
 
@@ -38,6 +55,7 @@ class UserService extends Service {
         $user = User::find($input['id']);
         $user->fill($input);
         $user->save();
+        $this->linkToRole($user,$input);
         return $user;
     }
 
@@ -45,6 +63,18 @@ class UserService extends Service {
         /* @var $user User */
         $user = User::find($id);
         $user->delete();
+        return $user;
+    }
+
+    private function linkToRole(User $user, array $input){
+
+        if (isset($input['roles'])){
+            $roles = $input['roles'];
+            $user->syncRoles($roles);
+        }else {
+            $user->syncRoles([]);
+        }
+
         return $user;
     }
 

@@ -20,7 +20,6 @@ class UserApiController extends Controller {
 	 */
 	public function index()
 	{
-
         return $this->service->all();
 	}
 

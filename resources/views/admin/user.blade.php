@@ -33,7 +33,14 @@
                         url: "/add",
                         templateUrl: "/app/admin/user/_add.html",
                         controller: "AddCtrl",
-                        resolve: {}
+                        resolve: {
+                            roles: function ($http) {
+                                return $http({
+                                    url: "/api/role",
+                                    method: 'get'
+                                })
+                            }
+                        }
                     })
                     .state('edit', {
                         url: "/edit/:id",
@@ -43,6 +50,12 @@
                             user: function ($http, $stateParams) {
                                 return $http({
                                     url: "/api/user/" + $stateParams.id + "/edit",
+                                    method: 'get'
+                                })
+                            },
+                            roles: function ($http) {
+                                return $http({
+                                    url: "/api/role",
                                     method: 'get'
                                 })
                             }
@@ -73,10 +86,14 @@
 
         })
 
-        app.controller("AddCtrl", function ($scope, $http, $state) {
-            console.log("AddCtrl Start...")
+        app.controller("AddCtrl", function ($scope, $http, $state, roles) {
+            console.log("AddCtrl Start......")
+            //console.log(roles)
 
-            $scope.user = {};
+            $scope.user = {
+                roles : []
+            };
+            $scope.roles = roles.data
 
             $scope.save = function () {
                 console.log($scope.user);
@@ -90,12 +107,49 @@
                 })
             }
 
+            $scope.addRole = function(role){
+                var users = $scope.user;
+                var found = false;
+                for(i=0;i<users.roles.length;i++){
+                    if(role.id == users.roles[i].id){
+                        found = true;
+                    }
+                }
+
+                if(!found){
+                    $scope.user.roles.push(role);
+                }
+
+            }
+
+            $scope.removeRole = function(role){
+                $scope.user.roles.splice($scope.user.roles.indexOf(role),1);
+            }
+
         })
 
-        app.controller("EditCtrl", function ($scope, $http, $state, user) {
+        app.controller("EditCtrl", function ($scope, $http, $state, user, roles) {
             console.log("EditCtrl Start...")
 
             $scope.user = user.data;
+            $scope.roles = roles.data;
+
+            $scope.addRole = function(role){
+                found = false;
+                for(i=0;i<$scope.user.roles.length;i++){
+                    if($scope.user.roles[i].id == role.id){
+                        found = true;
+                        break;
+                    }
+                }
+                if (!found){
+                    $scope.user.roles.push(role);
+                }
+            }
+
+            $scope.removeRole = function(role){
+                $scope.user.roles.splice($scope.user.roles.indexOf(role),1);
+            }
 
             $scope.save = function () {
                 console.log($scope.user);

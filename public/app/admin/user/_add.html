@@ -169,6 +169,28 @@
     </div>
 
     <div class="col-lg-8">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Group
+            </div>
+            <div class="panel-body">
+                <div class="btn-group" name="user_role">
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                        Action <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                        <li ng-repeat="role in roles" ng-click="addRole(role)"><a>{{role.name}}</a></li>
+                    </ul>
+                </div>
+
+                <ul class="list-group" style="margin-top:10px;">
+                    <li class="list-group-item" ng-repeat="role in user.roles">{{role.name}} <span ng-click="removeRole(role)" class="pull-right glyphicon glyphicon-minus" aria-hidden="true"></span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-8">
         <div class="form-group">
             <div class="col-md-offset-4">
                 <button type="submit" class="btn btn-primary">บันทึกข้อมูล</button>
@@ -176,6 +198,4 @@
             </div>
         </div>
     </div>
-
-
 </form>

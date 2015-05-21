@@ -4,8 +4,8 @@
     <mata charset="utf-8">
         <title>ระบบบริหารงานวิจัยคณะเทคโนโลยีสารสนเทศและการสื่อสาร</title>
 
-        <link href="/bower_components/bootstrap/dist/css/justified-nav.css" rel="stylesheet"/>
-        <!-- CSS Admin Theme -->
+        <!-- <link href="/bower_components/bootstrap/dist/css/justified-nav.css" rel="stylesheet"/>
+         <!-- CSS Admin Theme -->
         <link href="/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"/>
         <!-- MetisMenu CSS -->
         <link href="/bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet"/>
@@ -22,14 +22,17 @@
         <!-- Custom CSS -->
         <link href="/bower_components/startbootstrap-sb-admin-2/dist/css/sb-admin-2.css" rel="stylesheet"/>
 
+        <link rel="stylesheet" href="/bower_components/semantic-ui/dist/semantic.min.css"/>
+        <link rel="stylesheet" href="/bower_components/semantic-ui/dist/components/dropdown.min.css"/>
+
+        <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="/bower_components/semantic-ui/dist/semantic.min.js" type="text/javascript"></script>
+        <script src="/bower_components/semantic-ui/dist/components/dropdown.min.js" type="text/javascript"></script>
+
     </mata>
 </head>
 
 <body>
-
-<div class="masthead">
-    <h3 class="text-muted">ระบบบริหารงานวิจัยคณะเทคโนโลยีสารสนเทศและการสื่อสาร</h3>
-</div>
 
 <div id="wrapper">
     <!-- Navigation -->
@@ -41,7 +44,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <!-- <a class="navbar-brand" href="#">ICTRM V 1.0</a> -->
+            <a class="navbar-brand" href="#">ระบบบริหารงานวิจัยคณะเทคโนโลยีสารสนเทศและการสื่อสาร</a></br>
         </div>
         <!-- /.navbar-header -->
 

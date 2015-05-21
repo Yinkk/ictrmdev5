@@ -1,18 +1,18 @@
 <form ng-submit="save()" class="form form-horizontal">
     <div class="page-header">
         <h3>
-            Major
-            <small>Edit</small>
+            สาขาวิชา
+            <small>แก้ไขข้อมูลสาขาวิชา</small>
 
             <div class="pull-right">
                 <a ui-sref="list" class="btn btn-sm btn-default"><i
-                        class="fa fa-reply"></i>Back</a>
+                        class="fa fa-reply"></i>กลับ</a>
             </div>
         </h3>
     </div>
 
     <div class="form-group">
-        <label class="control-label col-md-2">Name TH :</label>
+        <label class="control-label col-md-2">ชื่อสาขาวิชา (th) :</label>
 
         <div class="col-md-5">
             <input type="text" name="name_th" class="form-control" ng-model="major.name_th" >
@@ -20,10 +20,10 @@
     </div>
 
     <div class="form-group">
-        <label class="control-label col-md-2">Name ENG :</label>
+        <label class="control-label col-md-2">ชื่อสาขาวิชา (en) :</label>
 
         <div class="col-md-5">
-            <textarea class="form-control" rows="5" name="detail" ng-model="major.name_eng"></textarea>
+            <input type="text" name="name_en" class="form-control" ng-model="major.name_en" >
         </div>
     </div>
 
