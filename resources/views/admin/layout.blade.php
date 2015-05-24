@@ -4,24 +4,7 @@
     <mata charset="utf-8">
         <title>ระบบบริหารงานวิจัยคณะเทคโนโลยีสารสนเทศและการสื่อสาร</title>
 
-        <!-- <link href="/bower_components/bootstrap/dist/css/justified-nav.css" rel="stylesheet"/>
-         <!-- CSS Admin Theme -->
-        <link href="/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"/>
-        <!-- MetisMenu CSS -->
-        <link href="/bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet"/>
-        <!-- Timeline CSS -->
-        <link href="/bower_components/sb-admin-v2/css/plugins/timeline/timeline.css" rel="stylesheet"/>
-        <!-- Morris Charts CSS -->
-        <link href="/bower_components/metisMenu/dist/metisMenu.css" rel="stylesheet"/>
-        <!-- Custom Fonts -->
-        <link href="/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
-        <!-- DataTables CSS -->
-        <link href="/bower_components/datatables-bootstrap3/BS3/assets/css/datatables.css" rel="stylesheet"/>
-        <!-- DataTables Responsive CSS -->
-        <link href="/bower_components/datatables-responsive/css/dataTables.responsive.css" rel="stylesheet"/>
-        <!-- Custom CSS -->
-        <link href="/bower_components/startbootstrap-sb-admin-2/dist/css/sb-admin-2.css" rel="stylesheet"/>
-
+        <link rel="stylesheet" href="/bower_components/font-awesome/css/font-awesome.min.css"/>
         <link rel="stylesheet" href="/bower_components/semantic-ui/dist/semantic.min.css"/>
         <link rel="stylesheet" href="/bower_components/semantic-ui/dist/components/dropdown.min.css"/>
 
@@ -29,115 +12,133 @@
         <script src="/bower_components/semantic-ui/dist/semantic.min.js" type="text/javascript"></script>
         <script src="/bower_components/semantic-ui/dist/components/dropdown.min.js" type="text/javascript"></script>
 
+        <style>
+            .avatar-menu {
+                height: 2em !important;
+                width: 2em !important;
+                margin-top: -0.5em;
+                margin-bottom: -0.5em;
+            }
+        </style>
+
     </mata>
 </head>
 
 <body>
 
-<div id="wrapper">
-    <!-- Navigation -->
-    <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">ระบบบริหารงานวิจัยคณะเทคโนโลยีสารสนเทศและการสื่อสาร</a></br>
+<div class="ui" style="background-color: #4c1d6e">
+    <h2 class="ui header inverted" style="padding: 10px;">
+        <div class="content">
+            ICTRM
+            <div class="sub header">ระบบบริหารงานวิจัยคณะเทคโนโลยีสารสนเทศและการสื่อสาร</div>
         </div>
-        <!-- /.navbar-header -->
-
-        <ul class="nav navbar-top-links navbar-right">
-            <li class="dropdown">
-                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                    <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
-                </a>
-                <ul class="dropdown-menu dropdown-user">
-                    <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
-                    </li>
-                    <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
-                    </li>
-                    <li class="divider"></li>
-                    <li><a href="#"><i
-                                    class="fa fa-sign-out fa-fw"></i>Logout</a>
-                    </li>
-                </ul>
-                <!-- /.dropdown-user -->
-            </li>
-            <!-- /.dropdown -->
-        </ul>
-        <!-- /.navbar-top-links -->
-
-        <div class="navbar-default sidebar" role="navigation">
-            <div class="sidebar-nav navbar-collapse">
-                <ul class="nav in" id="side-menu">
-                    <li><a href="/admin/home">หน้าผู้ดูแลระบบ</a></li>
-                    <li><a href="#">หน้าเว็บไซต์</a></li>
-                    <li>
-                        <a href="" class="">ข้อมูลระบบ<span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level collapse">
-                            <li><a href="/admin/faculty">ข้อมูลคณะ</a>
-                            </li>
-                            <li><a href="/admin/major">ข้อมูลสาขาวิชา</a>
-                            </li>
-                            <li><a href="/admin/budget">ปีงบประมาณ</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li><a href="/admin/news"><i class="fa fa-newspaper-o"></i>ข้อมูลข่าว</a></li>
-                    <li><a href="/admin/user"><i class="fa fa-users"></i></i>ข้อมูลนักวิจัย</a></li>
-                    <li><a href="#"><i class="fa fa-bar-chart-o fa-fw"></i>ข้อมูลงานวิจัย<span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level collapse">
-                            <li>
-                                <a href="#">โครงการ</a>
-                            </li>
-                            <li>
-                                <a href="#">ประชุมวิชาการ</a>
-                            </li>
-                            <li>
-                                <a href="#">วารสาร</a>
-                            </li>
-                            <li>
-                                <a href="#">ตีพิมพ์</a>
-                            </li>
-                            <li>
-                                <a href="#">รางวัล</a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.sidebar-collapse -->
-        </div>
-        <!-- /.navbar-static-side -->
-    </nav>
-
-    <div id="page-wrapper" style="min-height: 400px;">
-        <div class="row">
-
-            @yield('content')
-
-        </div>
-    </div>
-    <!-- /#page-wrapper -->
+    </h2>
 </div>
 
-<footer class="well" style="margin-top: 20px;" align="center">
-    &copy; 2015 ระบบบริหารงานวิจัยคณะเทคโนโลยีสารสนเทศและการสื่อสาร <a href="{{ url('admin') }}">Backend</a>
-</footer>
-<!-- JavaScript Admin Theme -->
-<!-- jQuery -->
-<script src="/bower_components/jquery/dist/jquery.min.js"></script>
+<div class="ui">
+    <div class="row">
+        <div class="ui large menu " id="MainMenu">
+            <div class="left purple inverted menu">
+                <a class="item active">
+                    Main Menu
+                </a>
+                <a class="item">
+                    About Us
+                </a>
+            </div>
+
+            <div class="right menu">
+                <div class="item ui dropdown" ng-controller="UserCtrl">
+                    <div>User</div>
+                    <div class="menu">
+                        <a class="item">Change Profile</a>
+                        <a class="item" ng-click="logout()">Logout</a>
+                    </div>
+                </div>
+
+                <div class="item">
+                    Support
+                </div>
+                <a class="item">
+                    FAQ
+                </a>
+                <a class="item">
+                    E-mail Support
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="ui padded stackable grid">
+    <div class="ui row">
+        <div class="ui three wide column">
+            <div class="ui fluid vertical menu">
+
+                <div class="header item">
+                    Administrator
+                </div>
+                <a class=" <% Request::is('admin/home') ? 'active' : '' %> item" href="/admin/home">
+                    <i class="home icon"></i>
+                    Dashboard
+                </a>
+                <div class="header item">
+                    จัดการผู้ใช้งานระบบ
+                </div>
+                <a class=" <% Request::is('admin/role') ? 'active' : '' %> item" href="/admin/role">
+                    สิทธ์การเข้าใช้งาน
+                </a>
+
+                <div class="header item">
+                    จัดการข้อมูลระบบ
+                </div>
+                <a class=" <% Request::is('admin/faculty') ? 'active' : '' %> item" href="/admin/faculty">
+                    ข้อมูลคณะ
+                </a>
+                <a class=" <% Request::is('admin/major') ? 'active' : '' %> item" href="/admin/major">
+                    ข้อมูลสาขาวิชา
+                </a>
+                <a class=" <% Request::is('admin/budget') ? 'active' : '' %> item" href="/admin/budget">
+                    ข้อมูลปีงบประมาณ
+                </a>
+                <a class=" <% Request::is('admin/news') ? 'active' : '' %> item" href="/admin/news">
+                    ข้อมูลข่าวประชาสุมพันธ์
+                </a>
+
+                <div class="header item">
+                    จัดการข้อมูลนักวิจัย
+                </div>
+                <a class=" <% Request::is('admin/user') ? 'active' : '' %> item" href="/admin/user">
+                    ข้อมูลนักวิจัย
+                </a>
+
+                <div class="header item">
+                    จัดการงานวิจัย
+                </div>
+                <a class=" <% Request::is('#') ? 'active' : '' %> item" href="#">
+                    โครงการ
+                </a>
+                <a class=" <% Request::is('#') ? 'active' : '' %> item" href="#">
+                    ประชุมวิชาการ
+                </a>
+                <a class=" <% Request::is('#') ? 'active' : '' %> item" href="#">
+                    รางวัล
+                </a>
+            </div>
+        </div>
+
+        <div class="ui thirteen wide column">
+            @yield('content')
+        </div>
+
+    </div>
+</div>
+
+<script type="text/javascript">
+    $('.ui.dropdown').dropdown();
+</script>
+
 <script src="/bower_components/datatables/media/js/jquery.dataTables.min.js"></script>
-
-<!-- Bootstrap Core JavaScript -->
-<script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-
-<!-- Metis Menu Plugin JavaScript-->
-<script src="/bower_components/metisMenu/dist/metisMenu.min.js"></script>
-<script src="/bower_components/sb-admin-v2/js/sb-admin.js"></script>
-
 <script type="text/javascript" src="/bower_components/angular/angular.min.js"></script>
 <script type="text/javascript" src="/bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
 <script type="text/javascript" src="/bower_components/angular-datatables/dist/angular-datatables.min.js"></script>

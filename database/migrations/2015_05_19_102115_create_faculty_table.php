@@ -15,7 +15,7 @@ class CreateFacultyTable extends Migration {
         Schema::create('faculty', function($table){
             $table->increments('id');
             $table->string('name_th');
-            $table->string('name_eng');
+            $table->string('name_en');
             $table->timestamps();
         });
 	}

@@ -11,5 +11,5 @@ use Illuminate\Database\Eloquent\Model;
 class Major extends Model{
     protected $table = 'major';
 
-    protected $fillable = ['name_th','name_eng'];
+    protected $fillable = ['name_th','name_en'];
 }

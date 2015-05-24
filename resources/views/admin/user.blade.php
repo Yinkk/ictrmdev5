@@ -9,7 +9,7 @@
 
 @section('javascript')
     <script type="text/javascript">
-        var app = angular.module("UserApp", ['ui.router','datatables','datatables.bootstrap']);
+        var app = angular.module("UserApp", ['ui.router']);
 
         app.config(function ($stateProvider, $urlRouterProvider) {
 
@@ -45,6 +45,12 @@
                                     url: "/api/faculty",
                                     method: 'get'
                                 })
+                            },
+                            majors: function ($http) {
+                                return $http({
+                                    url: "/api/major",
+                                    method: 'get'
+                                })
                             }
                         }
                     })
@@ -75,13 +81,12 @@
                     })
         });
 
-        app.controller("ListCtrl", function ($scope, $http, users,DTOptionsBuilder) {
+        app.controller("ListCtrl", function ($scope, $http, users) {
 
             console.log("ListCtrl Start...")
             console.log(users);
             $scope.users = users.data;
 
-            //$scope.dtOptions = {}
 
             $scope.delete = function (user) {
                 if (confirm("Are you sure to delete this user [id:" + user.id + "]?")) {
@@ -98,7 +103,7 @@
 
         })
 
-        app.controller("AddCtrl", function ($scope, $http, $state, roles, facultys) {
+        app.controller("AddCtrl", function ($scope, $http, $state, roles, facultys, majors) {
             console.log("AddCtrl Start......")
             //console.log(roles)
 
@@ -107,6 +112,7 @@
             };
             $scope.roles = roles.data
             $scope.facultys = facultys.data
+            $scope.majors = majors.data
 
             $scope.save = function () {
                 console.log($scope.user);
@@ -180,5 +186,6 @@
                 })
             }
         })
+
     </script>
 @stop

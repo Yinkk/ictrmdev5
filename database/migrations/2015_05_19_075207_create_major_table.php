@@ -15,7 +15,7 @@ class CreateMajorTable extends Migration {
         Schema::create('major', function($table){
             $table->increments('id');
             $table->string('name_th');
-            $table->string('name_eng');
+            $table->string('name_en');
             $table->timestamps();
         });
 	}
