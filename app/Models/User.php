@@ -31,15 +31,11 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
         'firstname_en',
         'lastname_en',
         'prefixname_en',
-        'user_faculty',
-        'user_major',
-        'user_type',
         'user_position',
         'user_education',
         'user_degree',
         'user_institution'
     ];
-
     /**
      * The attributes excluded from the model's JSON form.
      *
@@ -47,9 +43,21 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
      */
     protected $hidden = ['password', 'remember_token'];
 
-
     public function roles(){
         return $this->belongsToMany("App\Models\Role");
+    }
+
+    public function faculty(){
+        return $this->belongsTo("App\Models\Faculty");
+    }
+
+    public function major(){
+        return $this->belongsTo("App\Models\Major");
+    }
+
+    public function userType(){
+        //user_type
+        return $this->belongsTo("App\Models\UserType","usertype_id");
     }
 
     public function syncRoles(array $roles){

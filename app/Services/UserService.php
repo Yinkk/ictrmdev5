@@ -8,11 +8,14 @@
 
 namespace App\Services;
 
+use App\Models\UserType;
+use App\Models\Major;
+use App\Models\Faculty;
 use App\Models\User;
 
 class UserService extends Service {
 
-    var $with_array = ['roles'];
+    var $with_array = ['roles','faculty','major','userType'];
 
     /**
      * @return array
@@ -47,6 +50,9 @@ class UserService extends Service {
         $user->fill($input);
         $user->save();
         $this->linkToRole($user,$input);
+        $this->linkToFaculty($user,$input);
+        $this->linkToMajor($user,$input);
+    return    $this->linkToUserType($user,$input);
         return $user;
     }
 
@@ -56,6 +62,9 @@ class UserService extends Service {
         $user->fill($input);
         $user->save();
         $this->linkToRole($user,$input);
+        $this->linkToFaculty($user,$input);
+        $this->linkToMajor($user,$input);
+        $this->linkToUserType($user,$input);
         return $user;
     }
 
@@ -67,7 +76,6 @@ class UserService extends Service {
     }
 
     private function linkToRole(User $user, array $input){
-
         if (isset($input['roles'])){
             $roles = $input['roles'];
             $user->syncRoles($roles);
@@ -78,4 +86,37 @@ class UserService extends Service {
         return $user;
     }
 
+    private function linkToFaculty(User $user, array $input){
+        if (isset($input['faculty'])){
+            $faculty_id = $input['faculty']['id'];
+            $faculty = Faculty::find($faculty_id);
+            $user->faculty()->associate($faculty);
+            $user->save();
+        }else {
+
+        }
+        return $user;
+    }
+    private function linkToMajor(User $user, array $input){
+        if (isset($input['major'])){
+            $major_id = $input['major']['id'];
+            $major = Major::find($major_id);
+            $user->major()->associate($major);
+            $user->save();
+        }else {
+
+        }
+        return $user;
+    }
+
+    private function linkToUserType(User $user, array $input){
+
+        if (isset($input['usertype'])){
+            $userType_id = $input['usertype']['id'];
+            $userType = UserType::find($userType_id);
+            $user->userType()->associate($userType);
+            $user->save();
+        }
+        return $user;
+    }
 }

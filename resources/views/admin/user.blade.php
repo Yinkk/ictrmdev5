@@ -51,6 +51,12 @@
                                     url: "/api/major",
                                     method: 'get'
                                 })
+                            },
+                            userTypes: function ($http) {
+                                return $http({
+                                    url: "/api/userType",
+                                    method: 'get'
+                                })
                             }
                         }
                     })
@@ -103,16 +109,21 @@
 
         })
 
-        app.controller("AddCtrl", function ($scope, $http, $state, roles, facultys, majors) {
+        app.controller("AddCtrl", function ($scope, $http, $state, roles, facultys, majors, userTypes) {
             console.log("AddCtrl Start......")
             //console.log(roles)
 
             $scope.user = {
                 roles : []
+//                faculty : [],
+//                major : [],
+//                userType : []
             };
+
             $scope.roles = roles.data
             $scope.facultys = facultys.data
             $scope.majors = majors.data
+            $scope.userTypes = userTypes.data
 
             $scope.save = function () {
                 console.log($scope.user);
@@ -124,6 +135,18 @@
                     console.log(response);
                     $state.go('list');
                 })
+            }
+
+            $scope.selectFaculty = function(faculty){
+                $scope.user.faculty = faculty;
+            }
+
+            $scope.selectMajor = function(major){
+                $scope.user.major = major;
+            }
+
+            $scope.selectUserType = function(userType){
+                $scope.user.usertype = userType;
             }
 
             $scope.addRole = function(role){
@@ -156,6 +179,14 @@
             $scope.user = user.data;
             $scope.roles = roles.data;
             $scope.facultys = facultys.data;
+
+            $scope.selectFaculty = function(faculty){
+                $scope.user.faculty = faculty;
+            }
+
+            $scope.selectMajor = function(major){
+                $scope.user.major = major;
+            }
 
             $scope.addRole = function(role){
                 found = false;
