@@ -14,7 +14,7 @@ class CreateUsersTable extends Migration {
 	{
         Schema::create('users', function($table)
         {
-            $table->increments('id');
+            $table->bigIncrements('id');
             $table->string('username');
             $table->string('password');
             $table->string('prefixname_th');
@@ -23,12 +23,12 @@ class CreateUsersTable extends Migration {
             $table->string('firstname_en');
             $table->string('lastname_en');
             $table->string('prefixname_en');
-            $table->string('user_faculty');
-            $table->string('user_major');
-            $table->string('user_type');
-            $table->string('user_position');
+            $table->bigInteger('faculty_id');
+            $table->bigInteger('major_id');
+            $table->bigInteger('type_id');
+            $table->bigInteger('position_id');
+            $table->bigInteger('degree_id');
             $table->string('user_education');
-            $table->string('user_degree');
             $table->string('user_institution');
             $table->timestamps();
             $table->rememberToken();

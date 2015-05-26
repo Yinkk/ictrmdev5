@@ -8,14 +8,16 @@
 
 namespace App\Services;
 
-use App\Models\UserType;
+use App\Models\Degree;
+use App\Models\Position;
+use App\Models\Type;
 use App\Models\Major;
 use App\Models\Faculty;
 use App\Models\User;
 
 class UserService extends Service {
 
-    var $with_array = ['roles','faculty','major','userType'];
+    var $with_array = ['roles','faculty','major','type','position','degree'];
 
     /**
      * @return array
@@ -52,7 +54,9 @@ class UserService extends Service {
         $this->linkToRole($user,$input);
         $this->linkToFaculty($user,$input);
         $this->linkToMajor($user,$input);
-    return    $this->linkToUserType($user,$input);
+        $this->linkToType($user,$input);
+        $this->linkToPosition($user,$input);
+        $this->linkToDegree($user,$input);
         return $user;
     }
 
@@ -64,7 +68,9 @@ class UserService extends Service {
         $this->linkToRole($user,$input);
         $this->linkToFaculty($user,$input);
         $this->linkToMajor($user,$input);
-        $this->linkToUserType($user,$input);
+        $this->linkToType($user,$input);
+        $this->linkToPosition($user,$input);
+        $this->linkToDegree($user,$input);
         return $user;
     }
 
@@ -109,14 +115,32 @@ class UserService extends Service {
         return $user;
     }
 
-    private function linkToUserType(User $user, array $input){
+    private function linkToType(User $user, array $input){
 
-        if (isset($input['usertype'])){
-            $userType_id = $input['usertype']['id'];
-            $userType = UserType::find($userType_id);
-            $user->userType()->associate($userType);
+        if (isset($input['type'])){
+            $type_id = $input['type']['id'];
+            $type = Type::find($type_id);
+            $user->type()->associate($type);
             $user->save();
         }
         return $user;
+    }
+
+    private function linkToPosition(User $user, array $input){
+        if(isset($input['position'])){
+            $position_id = $input['position']['id'];
+            $position = Position::find($position_id);
+            $user->position()->associate($position);
+            $user->save();
+        }
+    }
+
+    private function linkToDegree(User $user, array $input){
+        if(isset($input['degree'])){
+            $degree_id = $input['degree']['id'];
+            $degree = Degree::find($degree_id);
+            $user->degree()->associate($degree);
+            $user->save();
+        }
     }
 }

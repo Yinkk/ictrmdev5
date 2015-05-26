@@ -13,7 +13,7 @@ class CreateNewsTable extends Migration {
 	public function up()
 	{
 		Schema::create('news', function($table){
-            $table->increments('id');
+            $table->bigIncrements('id');
             $table->string('title');
             $table->string('detail');
             $table->timeStamps();

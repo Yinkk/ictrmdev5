@@ -31,9 +31,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
         'firstname_en',
         'lastname_en',
         'prefixname_en',
-        'user_position',
         'user_education',
-        'user_degree',
         'user_institution'
     ];
     /**
@@ -55,9 +53,17 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
         return $this->belongsTo("App\Models\Major");
     }
 
-    public function userType(){
+    public function type(){
         //user_type
-        return $this->belongsTo("App\Models\UserType","usertype_id");
+        return $this->belongsTo("App\Models\Type");
+    }
+
+    public function position(){
+        return $this->belongsTo("App\Models\Position");
+    }
+
+    public function degree(){
+        return $this->belongsTo("App\Models\Degree");
     }
 
     public function syncRoles(array $roles){

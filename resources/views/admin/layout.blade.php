@@ -102,7 +102,7 @@
                     ข้อมูลปีงบประมาณ
                 </a>
                 <a class=" <% Request::is('admin/news') ? 'active' : '' %> item" href="/admin/news">
-                    ข้อมูลข่าวประชาสุมพันธ์
+                    ข้อมูลข่าวประชาสัมพันธ์
                 </a>
 
                 <div class="header item">

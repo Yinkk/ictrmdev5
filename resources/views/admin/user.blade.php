@@ -52,9 +52,21 @@
                                     method: 'get'
                                 })
                             },
-                            userTypes: function ($http) {
+                            types: function ($http) {
                                 return $http({
-                                    url: "/api/userType",
+                                    url: "/api/type",
+                                    method: 'get'
+                                })
+                            },
+                            positions: function($http){
+                                return $http({
+                                    url:"/api/position",
+                                    method: 'get'
+                                })
+                            },
+                            degrees: function($http){
+                                return $http({
+                                    url: "/api/degree",
                                     method: 'get'
                                 })
                             }
@@ -80,6 +92,30 @@
                             facultys: function ($http) {
                                 return $http({
                                     url: "/api/faculty",
+                                    method: 'get'
+                                })
+                            },
+                            majors: function ($http) {
+                                return $http({
+                                    url: "/api/major",
+                                    method: 'get'
+                                })
+                            },
+                            types: function ($http) {
+                                return $http({
+                                    url: "/api/type",
+                                    method: 'get'
+                                })
+                            },
+                            positions: function($http){
+                                return $http({
+                                    url:"/api/position",
+                                    method: 'get'
+                                })
+                            },
+                            degrees: function($http){
+                                return $http({
+                                    url: "/api/degree",
                                     method: 'get'
                                 })
                             }
@@ -109,7 +145,7 @@
 
         })
 
-        app.controller("AddCtrl", function ($scope, $http, $state, roles, facultys, majors, userTypes) {
+        app.controller("AddCtrl", function ($scope, $http, $state, roles, facultys, majors, types, positions , degrees) {
             console.log("AddCtrl Start......")
             //console.log(roles)
 
@@ -123,7 +159,9 @@
             $scope.roles = roles.data
             $scope.facultys = facultys.data
             $scope.majors = majors.data
-            $scope.userTypes = userTypes.data
+            $scope.types = types.data
+            $scope.positions = positions.data
+            $scope.degrees = degrees.data
 
             $scope.save = function () {
                 console.log($scope.user);
@@ -145,8 +183,16 @@
                 $scope.user.major = major;
             }
 
-            $scope.selectUserType = function(userType){
-                $scope.user.usertype = userType;
+            $scope.selectType = function(type){
+                $scope.user.type = type;
+            }
+
+            $scope.selectPosition = function(position){
+                $scope.user.position = position;
+            }
+
+            $scope.selectDegree = function(degree){
+                $scope.user.degree = degree;
             }
 
             $scope.addRole = function(role){
@@ -170,7 +216,7 @@
 
         })
 
-        app.controller("EditCtrl", function ($scope, $http, $state, user, roles, facultys) {
+        app.controller("EditCtrl", function ($scope, $http, $state, user, roles, facultys, majors, types, positions , degrees) {
             console.log("EditCtrl Start...")
             //console.log(facultys)
            // $scope.user = {
@@ -179,6 +225,10 @@
             $scope.user = user.data;
             $scope.roles = roles.data;
             $scope.facultys = facultys.data;
+            $scope.majors = majors.data
+            $scope.types = types.data
+            $scope.positions = positions.data
+            $scope.degrees = degrees.data
 
             $scope.selectFaculty = function(faculty){
                 $scope.user.faculty = faculty;
@@ -186,6 +236,18 @@
 
             $scope.selectMajor = function(major){
                 $scope.user.major = major;
+            }
+
+            $scope.selectType = function(type){
+                $scope.user.type = type;
+            }
+
+            $scope.selectPosition = function(position){
+                $scope.user.position = position;
+            }
+
+            $scope.selectDegree = function(degree){
+                $scope.user.degree = degree;
             }
 
             $scope.addRole = function(role){

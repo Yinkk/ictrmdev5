@@ -3,15 +3,15 @@
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-use App\Services\UserTypeService;
+use App\Services\TypeService;
 use Illuminate\Http\Request;
 use \Input;
 
-class UserTypeApiController extends Controller {
+class TypeApiController extends Controller {
 
-    function __construct(UserTypeService $userTypeService)
+    function __construct(TypeService $typeService)
     {
-        $this->service = $userTypeService;
+        $this->service = $typeService;
     }
 
     /**

@@ -3,19 +3,18 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateBudgetTable extends Migration {
+class CreateTypeTable extends Migration {
 
 	/**
 	 * Run the migrations.
 	 *
 	 * @return void
 	 */
-	public function up()
-	{
-        Schema::create('budget', function($table){
+    public function up()
+    {
+        Schema::create('type', function($table){
             $table->bigIncrements('id');
-            $table->string('year');
-            $table->string('budget');
+            $table->string('name');
             $table->timestamps();
         });
     }
@@ -27,8 +26,7 @@ class CreateBudgetTable extends Migration {
      */
     public function down()
     {
-        Schema::dropIfExists('budget');
+        Schema::dropIfExists('type');
     }
-
 
 }

@@ -8,14 +8,8 @@
 namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
-class UserType extends Model{
-
-    protected $table = 'userType';
+class Position extends Model{
+    protected $table = 'position';
 
     protected $fillable = ['name'];
-
-
-//    public function UserPosition(){
-//        return $this->hasMany("App\Models\UserPosition","usertype_id");
-//    }
 }

@@ -13,7 +13,7 @@ class CreateMajorTable extends Migration {
 	public function up()
 	{
         Schema::create('major', function($table){
-            $table->increments('id');
+            $table->bigIncrements('id');
             $table->string('name_th');
             $table->string('name_en');
             $table->timestamps();

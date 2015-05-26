@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUserTypeTable extends Migration {
+class CreateDegreeTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,8 +12,8 @@ class CreateUserTypeTable extends Migration {
 	 */
     public function up()
     {
-        Schema::create('userType', function($table){
-            $table->increments('id');
+        Schema::create('degree', function($table){
+            $table->bigIncrements('id');
             $table->string('name');
             $table->timestamps();
         });
@@ -26,6 +26,7 @@ class CreateUserTypeTable extends Migration {
      */
     public function down()
     {
-        Schema::dropIfExists('userType');
+        Schema::dropIfExists('degree');
     }
+
 }

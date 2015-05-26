@@ -41,8 +41,11 @@ class AdminController extends  Controller {
         return view("admin.faculty");
     }
 
-    public function userType(){
-        return view("admin.userType");
+    public function type(){
+        return view("admin.type");
     }
 
+//    public function position(){
+//        return view("admin.position");
+//    }
 }

@@ -2,7 +2,7 @@
     <div class="ui dividing header">
         <h3>
             นักวิจัย
-            <small>เพวิจัย</small>
+            <small>เพิ่มนักวิจัย</small>
 
             <div class="pull-right">
                 <a ui-sref="list" class="btn btn-sm btn-default"><i
@@ -11,157 +11,160 @@
         </h3>
     </div>
 
-    <h4 class="ui top attached header">ชื่อผู้ใช้-รหัสผ่าน</h4>
+    <h4 class="ui dividing header">ชื่อผู้ใช้-รหัสผ่าน</h4>
 
-    <div class="ui bottom attached segment">
-        <div class="four fields">
-            <div class="field">
-                <label>ชื่อผู้ใช้</label>
-                <input type="text" name="username" placeholder="Username">
-            </div>
-            <div class="field">
-                <label>รหัสผ่าน</label>
-                <input type="text" name="password" placeholder="Password">
-            </div>
-        </div>
-    </div>
-
-    <h4 class="ui top attached header">ชื่อ-นามสกุล</h4>
-
-    <div class="ui bottom attached segment">
-        <div class="three fields">
-            <div class="field">
-                <label>คำนำหน้า (th)</label>
-                <input type="text" name="prefixname_th" placeholder="คำนำหน้า (th)" ng-model="user.prefixname_th">
-            </div>
-
-            <div class="field">
-                <label>ชื่อ (th)</label>
-                <input type="text" name="firstname_th" placeholder="ชื่อ (th)" ng-model="user.firstname_th">
-            </div>
-
-            <div class="field">
-                <label>นามสกุล (th)</label>
-                <input type="text" name="lastname_th" placeholder="ชื่อ (th)" ng-model="user.lastname_th">
-            </div>
-        </div>
-
-        <div class="three fields">
-            <div class="field">
-                <label>คำนำหน้า (en)</label>
-                <input type="text" name="prefixname_en" placeholder="คำนำหน้า (en)" ng-model="user.prefixname_en">
-            </div>
-
-            <div class="field">
-                <label>ชื่อ (en)</label>
-                <input type="text" name="firstname_en" placeholder="ชื่อ (en)" ng-model="user.firstname_en">
-            </div>
-
-            <div class="field">
-                <label>นามสกุล (en)</label>
-                <input type="text" name="lastname_en" placeholder="นามสกุล (en)" ng-model="user.lastname_en">
-            </div>
-        </div>
-    </div>
-
-    <h4 class="ui top attached header">คณะ/หน่วยงาน/ตำแหน่ง</h4>
-
-    <div class="ui bottom attached segment">
-        <div class="four fields">
-            <div class="field">
-                <div class="ui floating dropdown labeled search icon button">
-                    <i class="world icon"></i>
-                    <span class="text">เลือกคณะ/หน่วยงาน</span>
-
-                    <div class="menu">
-                        <div class="item" ng-repeat="faculty in facultys">{{faculty.name_th}}</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="field">
-                <div class="ui floating dropdown labeled search icon button">
-                    <i class="world icon"></i>
-                    <span class="text">เลือกสาขาวิชา</span>
-
-                    <div class="menu">
-                        <div class="item" ng-repeat="major in majors">{{major.name_th}}</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="field">
-                <div class="ui floating dropdown labeled search icon button">
-                    <i class="world icon"></i>
-                    <span class="text">ประเภทตำแหน่ง</span>
-
-                    <div class="menu">
-                        <div class="item"></div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="field">
-                <div class="ui floating dropdown labeled search icon button">
-                    <i class="world icon"></i>
-                    <span class="text">ตำแหน่งทางวิชาการ</span>
-
-                    <div class="menu">
-                        <div class="item"></div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-    <h4 class="ui top attached header">การศึกษา</h4>
-
-    <div class="ui bottom attached segment">
-        <div class="three fields">
-
-            <div class="field">
-                <label>ระดับการศึกษาสูงสุด</label>
-                <input type="text" name="user_education" ng-model="user.user_education">
-            </div>
-            <div class="field">
-                <label>ชื่อปริญญา</label>
-                <input type="text" name="user_degree" ng-model="user.user_degree">
-            </div>
-
-            <div class="field">
-                <label>สถานศึกษาที่สำเร็จ</label>
-                <input type="text" name="user_institution" ng-model="user.user_institution">
-            </div>
-        </div>
-    </div>
-
-    <h4 class="ui top attached header">สิทธิ์การเข้าใช้งานระบบ</h4>
-
-    <div class="ui bottom attached segment">
+    <div class="four fields">
         <div class="field">
-            <label>Roles</label>
+            <label>ชื่อผู้ใช้</label>
+            <input type="text" name="username" placeholder="Username" ng-model="user.username">
+        </div>
+        <div class="field">
+            <label>รหัสผ่าน</label>
+            <input type="text" name="password" placeholder="Password" ng-model="user.password">
+        </div>
+    </div>
 
-            <div class="ui floating dropdown labeled icon button">
+    <h4 class="ui dividing header">ชื่อ-นามสกุล</h4>
+    <div class="four fields">
+        <div class="field">
+            <label>คำนำหน้า (th)</label>
+            <input type="text" name="prefixname_th" placeholder="คำนำหน้า (th)" ng-model="user.prefixname_th">
+        </div>
+
+        <div class="field">
+            <label>ชื่อ (th)</label>
+            <input type="text" name="firstname_th" placeholder="ชื่อ (th)" ng-model="user.firstname_th">
+        </div>
+
+        <div class="field">
+            <label>นามสกุล (th)</label>
+            <input type="text" name="lastname_th" placeholder="ชื่อ (th)" ng-model="user.lastname_th">
+        </div>
+    </div>
+
+    <div class="four fields">
+        <div class="field">
+            <label>คำนำหน้า (en)</label>
+            <input type="text" name="prefixname_en" placeholder="คำนำหน้า (en)" ng-model="user.prefixname_en">
+        </div>
+
+        <div class="field">
+            <label>ชื่อ (en)</label>
+            <input type="text" name="firstname_en" placeholder="ชื่อ (en)" ng-model="user.firstname_en">
+        </div>
+
+        <div class="field">
+            <label>นามสกุล (en)</label>
+            <input type="text" name="lastname_en" placeholder="นามสกุล (en)" ng-model="user.lastname_en">
+        </div>
+    </div>
+
+    <h4 class="ui dividing header">คณะ/หน่วยงาน/ตำแหน่ง</h4>
+
+    <div class="five fields">
+        <div class="field">
+            <div class="ui floating dropdown labeled search icon button">
                 <i class="world icon"></i>
-                <span class="text">เลิอกสิทธิ์การเข้าใช้</span>
+                <span class="text">เลือกคณะ/หน่วยงาน</span>
 
                 <div class="menu">
-                    <div class="item" ng-repeat="role in roles" ng-click="addRole(role)">{{role.name}}</div>
+                    <div class="item" ng-repeat="faculty in facultys" ng-click="selectFaculty(faculty)">
+                        {{faculty.name_th}}
+                    </div>
                 </div>
             </div>
+        </div>
 
-            <div class="ui label" ng-repeat="role in user.roles">
-                {{role.name}}
-                <i class="delete icon" ng-click="removeRole(role)"></i>
+        <div class="field">
+            <div class="ui floating dropdown labeled search icon button">
+                <i class="world icon"></i>
+                <span class="text">เลือกสาขาวิชา</span>
+
+                <div class="menu">
+                    <div class="item" ng-repeat="major in majors" ng-click="selectMajor(major)">{{major.name_th}}
+                    </div>
+                </div>
             </div>
+        </div>
 
+        <div class="field">
+            <div class="ui floating dropdown labeled search icon button">
+                <i class="world icon"></i>
+                <span class="text">เลือกประเภทตำแหน่ง</span>
+
+                <div class="menu">
+                    <div class="item" ng-repeat="type in types" ng-click="selectType(type)">
+                        {{type.name}}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="field">
+            <div class="ui floating dropdown labeled search icon button">
+                <i class="world icon"></i>
+                <span class="text">เลือกตำแหน่งทางวิชาการ</span>
+
+                <div class="menu">
+                    <div class="item" ng-repeat="position in positions" ng-click="selectPosition(position)">
+                        {{position.name}}
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="aligned center">
-        <button type="submit" class="ui primary submit button">บันทึกข้อมูล</button>
-        <button type="button" ui-sref="home" class="ui red submit button">ยกเลิก</button>
+
+    <h4 class="ui dividing header">การศึกษา</h4>
+
+    <div class="five fields">
+        <div class="field">
+            <div class="ui floating dropdown labeled search icon button">
+                <i class="world icon"></i>
+                <span class="text">เลือกระดับการศึกษาสูงสุด</span>
+
+                <div class="menu">
+                    <div class="item" ng-repeat="degree in degrees" ng-click="selectDegree(degree)">
+                        {{degree.name}}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="field">
+            <label>ชื่อปริญญา</label>
+            <input type="text" name="user_education" ng-model="user.user_education" placeholder="ชื่อปริญญา">
+        </div>
+
+        <div class="field">
+            <label>สถานศึกษาที่สำเร็จ</label>
+            <input type="text" name="user_institution" ng-model="user.user_institution"
+                   placeholder="สถานศึกษาที่สำเร็จ">
+        </div>
     </div>
+
+    <h4 class="ui dividing header">สิทธิ์การเข้าใช้งานระบบ</h4>
+
+    <div class="field">
+        <div class="ui floating dropdown labeled icon button">
+            <i class="world icon"></i>
+            <span class="text">เลิอกสิทธิ์การเข้าใช้</span>
+
+            <div class="menu">
+                <div class="item" ng-repeat="role in roles" ng-click="addRole(role)">{{role.name}}</div>
+            </div>
+        </div>
+
+        <div class="ui label" ng-repeat="role in user.roles">
+            {{role.name}}
+            <i class="delete icon" ng-click="removeRole(role)"></i>
+        </div>
+    </div>
+
+    <div class="">
+        <button type="submit" class="ui primary submit button">บันทึกข้อมูล</button>
+        <button type="button" ui-sref="list" class="ui red submit button">ยกเลิก</button>
+    </div>
+
 </form>
 
 <script type="text/javascript">
