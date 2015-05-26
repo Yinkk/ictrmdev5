@@ -1,8 +1,8 @@
-<form ng-submit="save()" class="form form-horizontal">
-    <div class="page-header">
+<form ng-submit="save()" class="ui form">
+    <div class="ui dividing header">
         <h3>
             สาขาวิชา
-            <small>เพิ่มสาขาวิชา</small>
+            <small>เพิ่ม</small>
 
             <div class="pull-right">
                 <a ui-sref="list" class="btn btn-sm btn-default"><i
@@ -11,26 +11,27 @@
         </h3>
     </div>
 
-    <div class="form-group">
-        <label class="control-label col-md-2">ชื่อสาขาวิชา (th) :</label>
+    <h4 class="ui dividing header">สาขาวิชา</h4>
 
-        <div class="col-md-5">
-            <input type="text" name="name_th" class="form-control" ng-model="major.name_th" >
+    <div class="three fields">
+        <div class="field">
+            <label>ชื่อสาขาวิชา (th)</label>
+            <input type="text" placeholder="ชื่อสาขาวิชา (th)" ng-model="major.name_th">
+        </div>
+        <div class="field">
+            <label>ชื่อสาขาวิชา (en)</label>
+            <input type="text" placeholder="ชื่อสาขาวิชา (en)" ng-model="major.name_en">
         </div>
     </div>
 
-    <div class="form-group">
-        <label class="control-label col-md-2">ชื่อสาขาวิชา (en) :</label>
-
-        <div class="col-md-5">
-            <input type="text" name="name_en" class="form-control" ng-model="major.name_en" >
-        </div>
+    <div></br></div>
+    <div class="">
+        <button type="submit" class="ui primary submit button">บันทึกข้อมูล</button>
+        <button type="button" ui-sref="list" class="ui red submit button">ยกเลิก</button>
     </div>
 
-    <div class="form-group">
-        <div class="col-md-offset-2">
-            <button type="submit" class="btn btn-primary">Submit</button>
-            <button ui-sref="list" class="btn btn-danger">Cancel</button>
-        </div>
-    </div>
 </form>
+
+<script type="text/javascript">
+    $('.ui.dropdown').dropdown();
+</script>

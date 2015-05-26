@@ -1,45 +1,35 @@
-<div class="page-header">
+
+<div class="ui header">
     <h3>
         สาขาวิชา
-        <div class="pull-right">
-            <button ui-sref="add" class="btn btn-sm btn-primary"><i class="fa fa-plus-circle"></i>เพิ่มสาขาวิชา</button>
+        <div class="ui">
+            <button ui-sref="add" class="ui primary button"><i class="fa fa-plus-circle"></i>เพิ่ม สาขาวิชา
+            </button>
         </div>
     </h3>
 </div>
 
-<div class="row">
-    <div class="col-lg-12">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                ตารางข้อมูลสาขาวิชา
-            </div>
-            <div class="row">
-                <div class="col-sm-12">
-                    <table class="table table-bordered">
-                        <thead>
-                        <tr>
-                            <th>ไอดี</th>
-                            <th>ชื่อสาขาวิชา (th)</th>
-                            <th>ชื่อสาขาวิชา (en)</th>
-                            <th>จัดการข้อมูล</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr ng-repeat="major in majors">
-                            <td>{{major.id}}</td>
-                            <td>{{major.name_th}}</td>
-                            <td>{{major.name_en}}</td>
-                            <td>
-                                <button ui-sref="edit({id:major.id})" class="btn btn-sm btn-info"><i
-                                        class="fa fa-edit"></i></button>
-                                <button ng-click="delete(major)" class="btn btn-sm btn-danger"><i
-                                        class="fa fa-trash"></i></button>
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+<table class="ui celled striped table">
+    <thead>
+    <tr>
+        <th>ไอดี</th>
+        <th>ชื่อสาขาวิชา (th)</th>
+        <th>ชื่อสาขาวิชา (en)</th>
+        <th>จัดการข้อมูล</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="major in majors">
+        <td>{{major.id}}</td>
+        <td>{{major.name_th}}</td>
+        <td>{{major.name_en}}</td>
+        <td>
+            <button ui-sref="edit({id:major.id})" class="ui compact blue button"><i
+                    class="fa fa-edit"></i></button>
+            <button ng-click="delete(major)" class="ui compact red button"><i
+                    class="fa fa-trash"></i></button>
+        </td>
+    </tr>
+    </tbody>
+</table>
+

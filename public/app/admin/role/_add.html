@@ -1,28 +1,32 @@
-<form ng-submit="save()" class="form form-horizontal">
-    <div class="page-header">
+<form ng-submit="save()" class="ui form">
+    <div class="ui dividing header">
         <h3>
-            Role
-            <small>Create</small>
+            สิทธิ์ผู้ใช้งาน
+            <small>เพิ่ม</small>
 
             <div class="pull-right">
                 <a ui-sref="list" class="btn btn-sm btn-default"><i
-                        class="fa fa-reply"></i>Back</a>
+                        class="fa fa-reply"></i>กลับ</a>
             </div>
         </h3>
     </div>
 
-    <div class="form-group">
-        <label class="control-label col-md-2">Role Name :</label>
+    <h4 class="ui dividing header">สิทธิ์ผู้ใช้งาน</h4>
 
-        <div class="col-md-5">
-            <input type="text" name="name" class="form-control" ng-model="role.name" >
+    <div class="three fields">
+        <div class="field">
+            <label>สิทธิ์ผู้ใช้งาน</label>
+            <input type="text" name="username" placeholder="สิทธิ์ผู้ใช้งาน" ng-model="role.name">
         </div>
     </div>
-
-    <div class="form-group">
-        <div class="col-md-offset-2">
-            <button type="submit" class="btn btn-primary">Submit</button>
-            <button ui-sref="list" class="btn btn-danger">Cancel</button>
-        </div>
+    <div></br></div>
+    <div class="">
+        <button type="submit" class="ui primary submit button">บันทึกข้อมูล</button>
+        <button type="button" ui-sref="list" class="ui red submit button">ยกเลิก</button>
     </div>
+
 </form>
+
+<script type="text/javascript">
+    $('.ui.dropdown').dropdown();
+</script>

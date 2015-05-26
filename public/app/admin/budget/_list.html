@@ -1,46 +1,35 @@
-<div class="page-header">
+
+<div class="ui header">
     <h3>
         ปีงบประมาณ
-        <div class="pull-right">
-            <button ui-sref="add" class="btn btn-sm btn-primary"><i class="fa fa-plus-circle"></i>เพิ่ม ปีงบประมาณ</button>
+        <div class="ui">
+            <button ui-sref="add" class="ui primary button"><i class="fa fa-plus-circle"></i>เพิ่ม ปีงบประมาณ
+            </button>
         </div>
     </h3>
 </div>
 
-<div class="row">
-    <div class="col-lg-12">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                ตารางข้อมูลงบประมาณ
-            </div>
-            <div class="row">
-                <div class="col-sm-12">
-                    <table class="table table-bordered">
-                        <thead>
-                        <tr>
-                            <th>ไอดี</th>
-                            <th>ปีงบประมาณ</th>
-                            <th>งบประมาณ</th>
-                            <th>จัดการข้อมูล</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr ng-repeat="budget in budgets">
-                            <td>{{budget.id}}</td>
-                            <td>{{budget.year}}</td>
-                            <td>{{budget.budget}}</td>
-                            <td>
-                                <button ui-sref="edit({id:budget.id})" class="btn btn-sm btn-info"><i
-                                        class="fa fa-edit"></i></button>
-                                <button ng-click="delete(budget)" class="btn btn-sm btn-danger"><i
-                                        class="fa fa-trash"></i></button>
-                            </td>
-                        </tr>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+<table class="ui celled striped table">
+    <thead>
+    <tr>
+        <th>ไอดี</th>
+        <th>ปีงบประมาณ</th>
+        <th>งบประมาณ</th>
+        <th>จัดการข้อมูล</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="budget in budgets">
+        <td>{{budget.id}}</td>
+        <td>{{budget.year}}</td>
+        <td>{{budget.budget}}</td>
+        <td>
+            <button ui-sref="edit({id:budget.id})" class="ui compact blue button"><i
+                    class="fa fa-edit"></i></button>
+            <button ng-click="delete(budget)" class="ui compact red button"><i
+                    class="fa fa-trash"></i></button>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
