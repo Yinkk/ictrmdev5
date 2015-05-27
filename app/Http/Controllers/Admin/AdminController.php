@@ -45,6 +45,9 @@ class AdminController extends  Controller {
         return view("admin.type");
     }
 
+    public function project(){
+        return view("admin.project");
+    }
 //    public function position(){
 //        return view("admin.position");
 //    }

@@ -1,0 +1,123 @@
+<form ng-submit="save()" class="ui form">
+    <div class="ui dividing header">
+        <h3>
+            โครงการ/งานวิจัย
+            <small>เพิ่ม</small>
+
+            <div class="pull-right">
+                <a ui-sref="list" class="btn btn-sm btn-default"><i
+                        class="fa fa-reply"></i>กลับ</a>
+            </div>
+        </h3>
+    </div>
+
+    <h4 class="ui dividing header">สรุปข้อเสนอโครงการ</h4>
+
+    <div class="three fields">
+        <div class="field">
+            <label>สัญญาเลขที่</label>
+            <input type="text" placeholder="สัญญาเลขที่" ng-model="project.name_th">
+        </div>
+
+        <div class="field">
+            <label>ปีงบประมาณ</label>
+            <input type="text" placeholder="ปีงบประมาณ" ng-model="project.name_th">
+        </div>
+
+    </div>
+
+    <div class="three fields">
+        <div class="field">
+            <label>ชื่อโครงการ/งานวิจัย (th)</label>
+            <input type="text" placeholder="ชื่อโครงการ/งานวิจัย (th)" ng-model="project.name_th">
+        </div>
+
+        <div class="field">
+            <label>ชื่อโครงการ/งานวิจัย (en)</label>
+            <input type="text" placeholder="ชื่อโครงการ/งานวิจัย (en)" ng-model="project.name_en">
+        </div>
+
+    </div>
+
+    <h4 class="ui dividing header"></h4>
+    <div class="three fields">
+        <div class="field">
+            <label>ชื่อหัวหน้าโครงการวิจัยผู้รับทุน</label>
+            <input type="text" placeholder="ชื่อหัวหน้าโครงการวิจัยผู้รับทุน" ng-model="project.name_en">
+        </div>
+    </div>
+
+    <div class="three fields">
+        <div class="field">
+            <label>คณะ/หน่วยงาน</label>
+            <input type="text" placeholder="คณะ/หน่วยงาน" ng-model="project.name_en">
+        </div>
+    </div>
+
+    <div class="three fields">
+        <div class="field">
+            <label>ระยะเวลาดำเนินการ</label>
+            <input type="text" placeholder="ระยะเวลาดำเนินการ" ng-model="project.name_en">
+        </div>
+    </div>
+
+    <div class="three fields">
+        <div class="field">
+            <label>งบประมาณ</label>
+            <input type="text" placeholder="งบประมาณ" ng-model="project.name_en">
+        </div>
+    </div>
+
+    <h4 class="ui dividing header"></h4>
+    <div class="three fields">
+        <div class="field">
+            <label>1.ความสำคัญและที่มาของปัญหา</label>
+            <input type="text" placeholder="ความสำคัญและที่มาของปัญหา" ng-model="project.name_en">
+        </div>
+    </div>
+
+    <div class="three fields">
+        <div class="field">
+            <label>2.วัตถุประสงค์</label>
+            <input type="text" placeholder="วัตถุประสงค์" ng-model="project.name_en">
+        </div>
+    </div>
+
+    <div class="three fields">
+        <div class="field">
+            <label>3.ระเบียบวิธีวิจัย</label>
+            <input type="text" placeholder="ระเบียบวิธีวิจัย" ng-model="project.name_en">
+        </div>
+    </div>
+
+    <div class="three fields">
+        <div class="field">
+            <label>4.แผนการดำเนินงานวิจัย</label>
+            <input type="text" placeholder="แผนการดำเนินงานวิจัย" ng-model="project.name_en">
+        </div>
+    </div>
+
+    <div class="three fields">
+        <div class="field">
+            <label>5.ผลงาน/หัวข้อเรื่องที่คาดว่าจะตีพิมพ์ในวารสารวิชาการระดับชาติ/นานาชาติหรือนำไปใช้ประโยชน์ในด้านอื่นๆ</label>
+            <input type="text" placeholder="ผลงาน" ng-model="project.name_en">
+        </div>
+    </div>
+
+    <h4 class="ui dividing header">รายชื่อผู้ทำงานในโครงการ</h4>
+
+    <!--<div ng-app="textAngularTest" ng-controller="wysiwygeditor" class="container app">-->
+        <!--<div text-angular="text-angular" name="htmlcontent" ng-model="htmlcontent" ta-disabled='disabled'></div>-->
+    <!--</div>-->
+
+    <div></br></div>
+    <div class="">
+        <button type="submit" class="ui primary submit button">บันทึกข้อมูล</button>
+        <button type="button" ui-sref="list" class="ui red submit button">ยกเลิก</button>
+    </div>
+
+</form>
+
+<script type="text/javascript">
+    $('.ui.dropdown').dropdown();
+</script>

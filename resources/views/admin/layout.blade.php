@@ -12,6 +12,11 @@
         <script src="/bower_components/semantic-ui/dist/semantic.min.js" type="text/javascript"></script>
         <script src="/bower_components/semantic-ui/dist/components/dropdown.min.js" type="text/javascript"></script>
 
+        <link rel='stylesheet' href='/bower_components/textAngular/dist/textAngular.css'>
+        <script src='/bower_components/textAngular/dist/textAngular-rangy.min.js'></script>
+        <script src='/bower_components/textAngular/dist/textAngular-sanitize.min.js'></script>
+        <script src='/bower_components/textAngular/dist/textAngular.min.js'></script>
+
         <style>
             .avatar-menu {
                 height: 2em !important;
@@ -115,7 +120,7 @@
                 <div class="header item">
                     จัดการงานวิจัย
                 </div>
-                <a class=" <% Request::is('#') ? 'active' : '' %> item" href="#">
+                <a class=" <% Request::is('admin/project') ? 'active' : '' %> item" href="/admin/project">
                     โครงการ
                 </a>
                 <a class=" <% Request::is('#') ? 'active' : '' %> item" href="#">

@@ -35,6 +35,7 @@ Route::group(['prefix' => 'api'], function () {
     Route::resource('type', 'Api\TypeApiController');
     Route::resource('position', 'Api\PositionApiController');
     Route::resource('degree', 'Api\DegreeApiController');
+    Route::resource('project', 'Api\ProjectApiController');
 });
 
 Route::get('/admin/home', 'Admin\AdminController@index');
@@ -45,5 +46,5 @@ Route::get('/admin/major', 'Admin\AdminController@major');
 Route::get('/admin/budget', 'Admin\AdminController@budget');
 Route::get('/admin/faculty', 'Admin\AdminController@faculty');
 Route::get('/admin/type', 'Admin\AdminController@type');
-//Route::get('/admin/position', 'Admin\AdminController@position');
+Route::get('/admin/project', 'Admin\AdminController@project');
 

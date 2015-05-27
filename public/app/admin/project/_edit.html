@@ -1,0 +1,40 @@
+<form ng-submit="save()" class="ui form">
+    <div class="ui dividing header">
+        <h3>
+            โครงการ/งานวิจัย
+            <small>แก้ไข</small>
+
+            <div class="pull-right">
+                <a ui-sref="list" class="btn btn-sm btn-default"><i
+                        class="fa fa-reply"></i>กลับ</a>
+            </div>
+        </h3>
+    </div>
+
+    <h4 class="ui dividing header">งานวิจัย</h4>
+
+    <div class="three fields">
+        <div class="field">
+            <label>ชื่อโครงการ/งานวิจัย (th)</label>
+            <input type="text" placeholder="ชื่อโครงการ/งานวิจัย (th)" ng-model="project.name_th">
+        </div>
+    </div>
+
+    <div class="three fields">
+        <div class="field">
+            <label>ชื่อโครงการ/งานวิจัย (en)</label>
+            <input type="text" placeholder="ชื่อโครงการ/งานวิจัย (en)" ng-model="project.name_en">
+        </div>
+    </div>
+
+    <div></br></div>
+    <div class="">
+        <button type="submit" class="ui primary submit button">บันทึกข้อมูล</button>
+        <button type="button" ui-sref="list" class="ui red submit button">ยกเลิก</button>
+    </div>
+
+</form>
+
+<script type="text/javascript">
+    $('.ui.dropdown').dropdown();
+</script>
