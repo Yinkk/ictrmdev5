@@ -9,14 +9,7 @@
 @section('javascript')
     <script type="text/javascript">
 
-//        angular.module("textAngularTest", ['textAngular']);
-//        function wysiwygeditor($scope) {
-//            $scope.orightml = 'asdfasdfasdf';
-//            $scope.htmlcontent = $scope.orightml;
-//            $scope.disabled = false;
-//        };
-
-        var app = angular.module("ProjectApp", ['ui.router']);
+        var app = angular.module("ProjectApp", ['ui.router','ngCkeditor']);
 
         app.config(function ($stateProvider, $urlRouterProvider) {
 
@@ -40,7 +33,9 @@
                         url: "/add",
                         templateUrl: "/app/admin/project/_add.html",
                         controller: "AddCtrl",
-                        resolve: {}
+                        resolve: {
+
+                        }
                     })
                     .state('edit', {
                         url: "/edit/:id",
@@ -79,6 +74,13 @@
 
         app.controller("AddCtrl", function ($scope, $http, $state) {
             console.log("AddCtrl Start..")
+
+
+
+            $scope.editorOptions = {
+//                language: 'en',
+//                uiColor: '#000000'
+            };
 
             $scope.project = {};
 
