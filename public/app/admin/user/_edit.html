@@ -117,13 +117,11 @@
             <div class="ui floating dropdown labeled search icon button">
                 <i class="world icon"></i>
 
-                <div ng-if="!user.position">
-                    <span class="text">เลือกตำแหน่งทางวิชาการ</span>
-                </div>
-                <span class="text">{{user.position.name}}</span>
+                <span ng-show="!user.position" class="">เลือกตำแหน่งทางวิชาการ</span>
+                <span ng-show="user.position" class="">{{user.position.name}}</span>
 
                 <div class="menu">
-                    <div class="item" ng-repeat="position in positions" ng-click="selectPosition(position)">
+                    <div class="item" ng-repeat="position in user.type.positions" ng-click="selectPosition(position)">
                         {{position.name}}
                     </div>
                 </div>

@@ -8,15 +8,6 @@
         <link rel="stylesheet" href="/bower_components/semantic-ui/dist/semantic.min.css"/>
         <link rel="stylesheet" href="/bower_components/semantic-ui/dist/components/dropdown.min.css"/>
 
-        <script src="/bower_components/jquery/dist/jquery.min.js"></script>
-        <script src="/bower_components/semantic-ui/dist/semantic.min.js" type="text/javascript"></script>
-        <script src="/bower_components/semantic-ui/dist/components/dropdown.min.js" type="text/javascript"></script>
-
-        <link rel='stylesheet' href='/bower_components/textAngular/dist/textAngular.css'>
-        <script src='/bower_components/textAngular/dist/textAngular-rangy.min.js'></script>
-        <script src='/bower_components/textAngular/dist/textAngular-sanitize.min.js'></script>
-        <script src='/bower_components/textAngular/dist/textAngular.min.js'></script>
-
         <style>
             .avatar-menu {
                 height: 2em !important;
@@ -139,17 +130,29 @@
     </div>
 </div>
 
-<script type="text/javascript">
-    $('.ui.dropdown').dropdown();
-</script>
 
+
+<script src="/bower_components/jquery/dist/jquery.min.js"></script>
+<script src="/bower_components/ckeditor/ckeditor.js"></script>
+
+<script src="/bower_components/semantic-ui/dist/semantic.min.js" type="text/javascript"></script>
+<script src="/bower_components/semantic-ui/dist/components/dropdown.min.js" type="text/javascript"></script>
 <script src="/bower_components/datatables/media/js/jquery.dataTables.min.js"></script>
+
 <script type="text/javascript" src="/bower_components/angular/angular.min.js"></script>
+<script src="/bower_components/ng-ckeditor/ng-ckeditor.min.js"></script>
 <script type="text/javascript" src="/bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
 <script type="text/javascript" src="/bower_components/angular-datatables/dist/angular-datatables.min.js"></script>
 <script type="text/javascript" src="/bower_components/angular-datatables/dist/plugins/bootstrap/angular-datatables.bootstrap.min.js"></script>
 
+<script type="text/javascript">
+    $('.ui.dropdown').dropdown();
+</script>
+
 @yield('javascript')
+
+
+
 
 </body>
 

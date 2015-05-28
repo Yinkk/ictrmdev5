@@ -58,20 +58,29 @@ class DatabaseSeeder extends Seeder {
 
     private function initPositions(){
         $positions = [
-            "ศาสตราจารย์",
-            "รองศาสตราจารย์",
-            "ผู้ช่วยศาสตราจารย์",
-            "อาจารย์",
-            "ระดับชำนาญการ",
-            "ระดับเชี่ยวชาญ",
-            "ระดับเชี่ยวชาญพิเศษ",
-            "อื่นๆ"
+            ["ศาสตราจารย์","พนักงานสายวิชาการ"],
+            ["รองศาสตราจารย์","พนักงานสายวิชาการ"],
+            ["ผู้ช่วยศาสตราจารย์","พนักงานสายวิชาการ"],
+            ["อาจารย์","พนักงานสายวิชาการ"],
+            ["ระดับชำนาญการ","พนักงานสายสนับสนุน"],
+            ["ระดับเชี่ยวชาญ","พนักงานสายสนับสนุน"],
+            ["ระดับเชี่ยวชาญพิเศษ","พนักงานสายสนับสนุน"],
+            ["อื่นๆ",null],
         ];
 
         foreach($positions as $position){
-            $positions = new \App\Models\Position();
-            $positions->name = $position;
-            $positions->save();
+
+            $p = new \App\Models\Position();
+            $p->name = $position[0];
+            $p->save();
+
+            //linkToType
+            if($position[1]){
+                $type = \App\Models\Type::where("name","=",$position[1])->first();
+                $p->type()->associate($type);
+                $p->save();
+            }
+
         }
     }
 

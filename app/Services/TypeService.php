@@ -13,7 +13,7 @@ use App\Models\Type;
 class TypeService extends Service {
 
     var $with_array = [
-    //    'userPosition'
+        'positions'
     ];
 
     public function all(){

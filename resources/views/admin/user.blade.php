@@ -184,7 +184,15 @@
             }
 
             $scope.selectType = function(type){
-                $scope.user.type = type;
+                if($scope.user.type ==type){
+
+                }else {
+                    $scope.user.type = type;
+                    if($scope.user.position){
+                        $scope.user.position = null;
+                    }
+                }
+
             }
 
             $scope.selectPosition = function(position){
@@ -213,7 +221,6 @@
             $scope.removeRole = function(role){
                 $scope.user.roles.splice($scope.user.roles.indexOf(role),1);
             }
-
         })
 
         app.controller("EditCtrl", function ($scope, $http, $state, user, roles, facultys, majors, types, positions , degrees) {
@@ -239,7 +246,15 @@
             }
 
             $scope.selectType = function(type){
-                $scope.user.type = type;
+                if($scope.user.type ==type){
+
+                }else {
+                    $scope.user.type = type;
+                    if($scope.user.position){
+                        $scope.user.position = null;
+                    }
+                }
+
             }
 
             $scope.selectPosition = function(position){

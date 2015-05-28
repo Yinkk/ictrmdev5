@@ -12,4 +12,8 @@ class Position extends Model{
     protected $table = 'position';
 
     protected $fillable = ['name'];
+
+    public function type(){
+        return $this->belongsTo("App\Models\Type");
+    }
 }

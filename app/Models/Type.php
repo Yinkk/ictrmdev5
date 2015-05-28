@@ -15,7 +15,7 @@ class Type extends Model{
     protected $fillable = ['name'];
 
 
-//    public function UserPosition(){
-//        return $this->hasMany("App\Models\UserPosition","usertype_id");
-//    }
+    public function positions(){
+        return $this->hasMany("App\Models\Position","type_id");
+    }
 }
