@@ -16,14 +16,20 @@
     <div class="three fields">
         <div class="field">
             <label>สัญญาเลขที่</label>
-            <input type="text" placeholder="สัญญาเลขที่" ng-model="project.name_th">
+            <input type="text" placeholder="สัญญาเลขที่" ng-model="project.contract">
         </div>
 
-        <div class="field">
-            <label>ปีงบประมาณ</label>
-            <input type="text" placeholder="ปีงบประมาณ" ng-model="project.name_th">
-        </div>
+        <div class="ui floating dropdown labeled search icon button">
+            <i class="world icon"></i>
 
+            <span class="text">เลือกปีงบประมาณ</span>
+
+            <div class="menu">
+                <div class="item" ng-repeat="budget in budgets" ng-click="selectBudget(budget)">
+                    {{budget.year}}
+                </div>
+            </div>
+        </div>
     </div>
 
     <div class="three fields">
@@ -40,78 +46,75 @@
     </div>
 
     <h4 class="ui dividing header"></h4>
-    <div class="three fields">
-        <div class="field">
-            <label>ชื่อหัวหน้าโครงการวิจัยผู้รับทุน</label>
-            <input type="text" placeholder="ชื่อหัวหน้าโครงการวิจัยผู้รับทุน" ng-model="project.name_en">
-        </div>
-    </div>
 
     <div class="three fields">
-        <div class="field">
-            <label>คณะ/หน่วยงาน</label>
-            <input type="text" placeholder="คณะ/หน่วยงาน" ng-model="project.name_en">
+
+        <div class="ui floating dropdown labeled search icon button">
+            <i class="world icon"></i>
+            <span class="text">เลือกหัวหน้าโครงการวิจัยผู้รับทุน</span>
+            <div class="menu">
+                <div class="item" ng-repeat="user in users" ng-click="selectUser(user)">
+                    {{ user.firstname_th }}  {{ user.lastname_th}}
+                </div>
+            </div>
+        </div>
+
+        <div class="ui floating dropdown labeled search icon button">
+            <i class="world icon"></i>
+            <span class="text">เลือกคณะ/หน่วยงาน</span>
+            <div class="menu">
+                <div class="item" ng-repeat="faculty in facultys" ng-click="selectFaculty(faculty)">
+                    {{ faculty.name_th }}
+                </div>
+            </div>
         </div>
     </div>
 
     <div class="three fields">
         <div class="field">
             <label>ระยะเวลาดำเนินการ</label>
-            <input type="text" placeholder="ระยะเวลาดำเนินการ" ng-model="project.name_en">
+            <input type="text" placeholder="ระยะเวลาดำเนินการ" ng-model="project.period">
         </div>
-    </div>
-
-    <div class="three fields">
         <div class="field">
             <label>งบประมาณ</label>
-            <input type="text" placeholder="งบประมาณ" ng-model="project.name_en">
+            <input type="text" placeholder="งบประมาณ" ng-model="project.projbudget">
         </div>
     </div>
 
     <h4 class="ui dividing header"></h4>
-    <div class="three fields">
-        <div class="field">
-            <label>1.ความสำคัญและที่มาของปัญหา</label>
-            <input type="text" placeholder="ความสำคัญและที่มาของปัญหา" ng-model="project.name_en">
-        </div>
+
+    <div class="field">
+        <label>1. ความสำคัญและที่มาของปัญหา</label>
+        <textarea ckeditor="editorOptions" name="problem" ng-model="project.problem"></textarea>
     </div>
 
-    <div class="three fields">
-        <div class="field">
-            <label>2.วัตถุประสงค์</label>
-            <input type="text" placeholder="วัตถุประสงค์" ng-model="project.name_en">
-        </div>
+    <div class="field">
+        <label>2.วัตถุประสงค์</label>
+        <textarea ckeditor="editorOptions" ng-model="project.purpose"></textarea>
     </div>
 
-    <div class="three fields">
-        <div class="field">
-            <label>3.ระเบียบวิธีวิจัย</label>
-            <input type="text" placeholder="ระเบียบวิธีวิจัย" ng-model="project.name_en">
-        </div>
+    <div class="field">
+        <label>3.ระเบียบวิธีวิจัย</label>
+        <textarea ckeditor="editorOptions" ng-model="project.methodology"></textarea>
     </div>
 
-    <div class="three fields">
-        <div class="field">
-            <label>4.แผนการดำเนินงานวิจัย</label>
-            <input type="text" placeholder="แผนการดำเนินงานวิจัย" ng-model="project.name_en">
-        </div>
+    <div class="field">
+        <label>4.แผนการดำเนินงานวิจัย</label>
+        <textarea ckeditor="editorOptions" ng-model="project.plan"></textarea>
     </div>
 
-    <div class="three fields">
-        <div class="field">
-            <label>5.ผลงาน/หัวข้อเรื่องที่คาดว่าจะตีพิมพ์ในวารสารวิชาการระดับชาติ/นานาชาติหรือนำไปใช้ประโยชน์ในด้านอื่นๆ</label>
-            <input type="text" placeholder="ผลงาน" ng-model="project.name_en">
-        </div>
+    <div class="field">
+        <label>5.ผลงาน/หัวข้อเรื่องที่คาดว่าจะตีพิมพ์ในวารสารวิชาการระดับชาติ/นานาชาติหรือนำไปใช้ประโยชน์ในด้านอื่นๆ</label>
+        <textarea ckeditor="editorOptions" ng-model="project.publish"></textarea>
     </div>
 
     <h4 class="ui dividing header">รายชื่อผู้ทำงานในโครงการ</h4>
-
-
-    <textarea ckeditor="editorOptions" ng-model="modelName"></textarea>
-
-
+    <div class="field">
+        <textarea ckeditor="editorOptions" ng-model="project.coresearcher"></textarea>
+    </div>
 
     <div></br></div>
+
     <div class="">
         <button type="submit" class="ui primary submit button">บันทึกข้อมูล</button>
         <button type="button" ui-sref="list" class="ui red submit button">ยกเลิก</button>
@@ -120,5 +123,6 @@
 </form>
 
 <script type="text/javascript">
+    $('.ui.accordion').accordion();
     $('.ui.dropdown').dropdown();
 </script>

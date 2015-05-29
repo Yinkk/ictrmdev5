@@ -192,12 +192,10 @@
                         $scope.user.position = null;
                     }
                 }
-
             }
-
-            $scope.selectPosition = function(position){
-                $scope.user.position = position;
-            }
+//            $scope.selectPosition = function(position){
+//                $scope.user.position = position;
+//            }
 
             $scope.selectDegree = function(degree){
                 $scope.user.degree = degree;

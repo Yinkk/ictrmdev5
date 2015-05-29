@@ -12,10 +12,18 @@ class Project extends Model{
 
     protected $table = 'project';
 
-    protected $fillable = ['name_th','name_en'];
+    protected $fillable = ['name_th','name_en','period','projbudget','problem','purpose','methodology','plan','publish','coresearcher'];
 
+    public function budget(){
+        return $this->belongsTo("App\Models\Budget");
+    }
 
-//    public function UserPosition(){
-//        return $this->hasMany("App\Models\UserPosition","usertype_id");
-//    }
+    public function faculty(){
+        return $this->belongsTo("App\Models\Faculty");
+    }
+
+    public function user(){
+        return $this->belongsTo("App\Models\User");
+    }
+
 }

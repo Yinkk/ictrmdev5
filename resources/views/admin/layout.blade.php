@@ -140,7 +140,7 @@
 <script src="/bower_components/datatables/media/js/jquery.dataTables.min.js"></script>
 
 <script type="text/javascript" src="/bower_components/angular/angular.min.js"></script>
-<script src="/bower_components/ng-ckeditor/ng-ckeditor.min.js"></script>
+<script src="/bower_components/ng-ckeditor/ng-ckeditor.js"></script>
 <script type="text/javascript" src="/bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
 <script type="text/javascript" src="/bower_components/angular-datatables/dist/angular-datatables.min.js"></script>
 <script type="text/javascript" src="/bower_components/angular-datatables/dist/plugins/bootstrap/angular-datatables.bootstrap.min.js"></script>

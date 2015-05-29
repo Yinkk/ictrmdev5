@@ -67,8 +67,8 @@ app.directive('ckeditor', ['$timeout', '$q', function ($timeout, $q) {
                     ],
                     disableNativeSpellChecker: false,
                     uiColor: '#FAFAFA',
-                    height: '400px',
-                    width: '100%'
+                    height: '200px',
+                    width: '70%'
                 };
                 options = angular.extend(options, scope[attrs.ckeditor]);
 

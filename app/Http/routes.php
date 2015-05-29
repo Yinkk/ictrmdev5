@@ -48,3 +48,4 @@ Route::get('/admin/faculty', 'Admin\AdminController@faculty');
 Route::get('/admin/type', 'Admin\AdminController@type');
 Route::get('/admin/project', 'Admin\AdminController@project');
 
+

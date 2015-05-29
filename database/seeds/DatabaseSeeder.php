@@ -98,6 +98,20 @@ class DatabaseSeeder extends Seeder {
             $degrees->save();
         }
     }
+
+    private function initBudget(){
+        $budgets = [
+            ["2557","100000"],
+            ["2558","200000"],
+        ];
+
+        foreach($budgets as $budget){
+            $budgets = new \App\Models\Budget();
+            $budgets->year = $budget[0];
+            $budgets->budget = $budget[1];
+            $budgets->save();
+        }
+    }
 	/**
 	 * Run the database seeds.
 	 *
@@ -112,6 +126,7 @@ class DatabaseSeeder extends Seeder {
         $this->initTypes();
         $this->initPositions();
         $this->initDegrees();
+        $this->initBudget();
 
 		$fac1 = new Faculty();
         $fac1->name_th = "คณะเทคโนโลยีสารสนเทศและการสื่อสาร";

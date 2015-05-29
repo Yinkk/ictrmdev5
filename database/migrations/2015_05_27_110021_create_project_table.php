@@ -16,6 +16,17 @@ class CreateProjectTable extends Migration {
             $table->bigIncrements('id');
             $table->string('name_th');
             $table->string('name_en');
+            $table->bigInteger('budget_id');
+            $table->bigInteger('user_id');
+            $table->bigInteger('faculty_id');
+            $table->string('period');
+            $table->double('projbudget');
+            $table->text('problem');
+            $table->text('purpose');
+            $table->text('methodology');
+            $table->text('plan');
+            $table->text('publish');
+            $table->text('coresearcher');
             $table->timestamps();
         });
     }

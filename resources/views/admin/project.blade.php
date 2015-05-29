@@ -34,7 +34,24 @@
                         templateUrl: "/app/admin/project/_add.html",
                         controller: "AddCtrl",
                         resolve: {
-
+                            budgets: function ($http){
+                                return $http({
+                                    url: "/api/budget",
+                                    method: 'get'
+                                })
+                            },
+                            users: function ($http){
+                                return $http({
+                                    url: "/api/user",
+                                    method: 'get'
+                                })
+                            },
+                            facultys: function($http){
+                                return $http({
+                                    url: "/api/faculty",
+                                    method: 'get'
+                                })
+                            }
                         }
                     })
                     .state('edit', {
@@ -45,6 +62,24 @@
                             project: function ($http, $stateParams) {
                                 return $http({
                                     url: "/api/project/" + $stateParams.id + "/edit",
+                                    method: 'get'
+                                })
+                            },
+                            budgets: function ($http){
+                                return $http({
+                                    url: "/api/budget",
+                                    method: 'get'
+                                })
+                            },
+                            users: function ($http){
+                                return $http({
+                                    url: "/api/user",
+                                    method: 'get'
+                                })
+                            },
+                            facultys: function($http){
+                                return $http({
+                                    url: "/api/faculty",
                                     method: 'get'
                                 })
                             }
@@ -72,17 +107,19 @@
             }
         })
 
-        app.controller("AddCtrl", function ($scope, $http, $state) {
+        app.controller("AddCtrl", function ($scope, $http, $state, budgets, users, facultys) {
             console.log("AddCtrl Start..")
 
-
-
+            // ckeditor
             $scope.editorOptions = {
 //                language: 'en',
-//                uiColor: '#000000'
+//                uiColor: '#000000,
             };
 
             $scope.project = {};
+            $scope.budgets = budgets.data;
+            $scope.users = users.data;
+            $scope.facultys = facultys.data;
 
             $scope.save = function () {
                 console.log($scope.project);
@@ -95,13 +132,40 @@
                     $state.go('list');
                 })
             }
+
+            $scope.selectBudget = function(budget){
+                $scope.project.budget = budget;
+            }
+
+            $scope.selectUser = function(user){
+                $scope.project.user = user;
+            }
+
+            $scope.selectFaculty = function(faculty){
+                $scope.project.faculty = faculty;
+            }
         })
 
-        app.controller("EditCtrl", function ($scope, $http, $state, project) {
+        app.controller("EditCtrl", function ($scope, $http, $state, project, budgets, users, facultys) {
             console.log("EditCtrl Start..")
-            console.log(project);
+
 
             $scope.project = project.data;
+            $scope.budgets = budgets.data;
+            $scope.users = users.data;
+            $scope.facultys = facultys.data;
+
+            $scope.selectBudget = function(budget){
+                $scope.project.budget = budget;
+            }
+
+            $scope.selectUser = function(user){
+                $scope.project.user = user;
+            }
+            //console.log($scope.project.user);
+            $scope.selectFaculty = function(faculty){
+                $scope.project.faculty = faculty;
+            }
 
             $scope.save = function () {
                 console.log($scope.project);
