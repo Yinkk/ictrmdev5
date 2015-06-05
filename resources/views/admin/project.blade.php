@@ -1,7 +1,6 @@
 @extends('admin.layout')
 
 @section('content')
-    
     <div id="ProjectListing" ng-app="ProjectApp">
         <ui-view></ui-view>
     </div>
