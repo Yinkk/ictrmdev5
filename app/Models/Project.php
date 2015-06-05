@@ -12,7 +12,7 @@ class Project extends Model{
 
     protected $table = 'project';
 
-    protected $fillable = ['name_th','name_en','period','projbudget','problem','purpose','methodology','plan','publish','coresearcher'];
+    protected $fillable = ['name_th','name_en','contract', 'period','projbudget','problem','purpose','methodology','plan','publish','coresearcher'];
 
     public function budget(){
         return $this->belongsTo("App\Models\Budget");

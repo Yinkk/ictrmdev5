@@ -227,6 +227,7 @@
            // $scope.user = {
            //     facultys : []
            // };
+           //console.log($scope.user.faculty);
             $scope.user = user.data;
             $scope.roles = roles.data;
             $scope.facultys = facultys.data;
@@ -244,7 +245,7 @@
             }
 
             $scope.selectType = function(type){
-                if($scope.user.type ==type){
+                if($scope.user.type == type){
 
                 }else {
                     $scope.user.type = type;

@@ -16,6 +16,7 @@ class CreateProjectTable extends Migration {
             $table->bigIncrements('id');
             $table->string('name_th');
             $table->string('name_en');
+            $table->string('contract');
             $table->bigInteger('budget_id');
             $table->bigInteger('user_id');
             $table->bigInteger('faculty_id');

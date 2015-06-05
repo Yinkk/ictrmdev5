@@ -155,10 +155,13 @@
             $scope.users = users.data;
             $scope.facultys = facultys.data;
 
+
+
             $scope.selectBudget = function(budget){
                 $scope.project.budget = budget;
             }
-
+            //console.log($scope.project.faculty);
+            //console.log($scope.project.budget);
             $scope.selectUser = function(user){
                 $scope.project.user = user;
             }

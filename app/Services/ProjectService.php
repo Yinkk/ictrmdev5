@@ -17,12 +17,25 @@ class ProjectService extends Service {
 
     var $with_array = ['budget','user','faculty'];
 
+    public function getWithArray()
+    {
+        return $this->with_array;
+    }
+
+    /**
+     * @param array $with_array
+     */
+    public function setWithArray($with_array)
+    {
+        $this->with_array = $with_array;
+    }
+
     public function all(){
         return Project::with($this->with_array)->get();
     }
 
     public function get($id){
-        return Project::find($id);
+        return Project::with($this->with_array)->find($id);
     }
 
     public function create(){

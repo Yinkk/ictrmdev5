@@ -1,131 +1,205 @@
-<form ng-submit="save()" class="ui form">
-    <div class="ui dividing header">
-        <h3>
-            โครงการ/งานวิจัย
-            <small>เพิ่ม</small>
+<div class="ui secondary pointing menu">
+    <a class="active item" data-tab="form001">ICT-วจ-001</a>
+    <a class="item" data-tab="form002">ICT-วจ-002</a>
+    <a class="item" data-tab="form003">ICT-วจ-003</a>
+    <a class="item" data-tab="form004">ICT-วจ-004</a>
+    <a class="item" data-tab="form005">ICT-วจ-005</a>
+    <a class="item" data-tab="form006">ICT-วจ-006</a>
+    <a class="item" data-tab="form007">ICT-วจ-007</a>
+    <a class="item" data-tab="form008">ICT-วจ-008</a>
+    <a class="item" data-tab="form009">ICT-วจ-009</a>
+    <a class="item" data-tab="form010">ICT-วจ-010</a>
+    <a class="item" data-tab="form011">ICT-วจ-011</a>
+    <a class="item" data-tab="form012">ICT-วจ-012</a>
+</div>
 
-            <div class="pull-right">
-                <a ui-sref="list" class="btn btn-sm btn-default"><i
-                        class="fa fa-reply"></i>กลับ</a>
-            </div>
-        </h3>
-    </div>
+<div class="ui active tab" data-tab="form001">
 
-    <h4 class="ui dividing header">สรุปข้อเสนอโครงการ</h4>
+    <form ng-submit="save()" class="ui form">
+        <div class="ui dividing header">
+            <h3>
+                โครงการ/งานวิจัย
+                <small>แก้ไข</small>
 
-    <div class="three fields">
-        <div class="field">
-            <label>สัญญาเลขที่</label>
-            <input type="text" placeholder="สัญญาเลขที่" ng-model="project.contract">
-        </div>
-
-        <div class="ui floating dropdown labeled search icon button">
-            <i class="world icon"></i>
-
-            <span class="text">เลือกปีงบประมาณ</span>
-
-            <div class="menu">
-                <div class="item" ng-repeat="budget in budgets" ng-click="selectBudget(budget)">
-                    {{budget.year}}
+                <div class="pull-right">
+                    <a ui-sref="list" class="btn btn-sm btn-default"><i
+                            class="fa fa-reply"></i>กลับ</a>
                 </div>
+            </h3>
+        </div>
+
+        <h4 class="ui dividing header">สรุปข้อเสนอโครงการ</h4>
+
+        <div class="three fields">
+            <div class="field">
+                <label>สัญญาเลขที่</label>
+                <input type="text" placeholder="สัญญาเลขที่" ng-model="project.contract">
             </div>
-        </div>
-    </div>
 
-    <div class="three fields">
-        <div class="field">
-            <label>ชื่อโครงการ/งานวิจัย (th)</label>
-            <input type="text" placeholder="ชื่อโครงการ/งานวิจัย (th)" ng-model="project.name_th">
-        </div>
+            <div class="ui floating dropdown labeled search icon button">
+                <i class="world icon"></i>
 
-        <div class="field">
-            <label>ชื่อโครงการ/งานวิจัย (en)</label>
-            <input type="text" placeholder="ชื่อโครงการ/งานวิจัย (en)" ng-model="project.name_en">
-        </div>
+                <div ng-if="!project.budget">
+                    <span class="text">เลือกปีงบประมาณ</span>
+                </div>
+                <span class="text">{{project.budget.year}}</span>
 
-    </div>
-
-    <h4 class="ui dividing header"></h4>
-    <div class="three fields">
-
-        <div class="ui floating dropdown labeled search icon button">
-            <i class="world icon"></i>
-
-            <div ng-if="!project.user">
-                <span class="text">เลือกหัวหน้าโครงการวิจัยผู้รับทุน</span>
-            </div>
-            <span class="text">{{project.user.firstname_th}}  {{project.user.lastname_th}}</span>
-            <div class="menu">
-                <div class="item" ng-repeat="user in users" ng-click="selectUser(user)">
-                    {{ user.firstname_th }}  {{ user.lastname_th}}
+                <div class="menu">
+                    <div class="item" ng-repeat="budget in budgets" ng-click="selectBudget(budget)">
+                        {{budget.year}}
+                    </div>
                 </div>
             </div>
         </div>
 
-        <div class="ui floating dropdown labeled search icon button">
-            <i class="world icon"></i>
-            <span class="text">เลือกคณะ/หน่วยงาน</span>
-            <div class="menu">
-                <div class="item" ng-repeat="faculty in facultys" ng-click="selectFaculty(faculty)">
-                    {{ faculty.name_th }}
+        <div class="three fields">
+            <div class="field">
+                <label>ชื่อโครงการ/งานวิจัย (th)</label>
+                <input type="text" placeholder="ชื่อโครงการ/งานวิจัย (th)" ng-model="project.name_th">
+            </div>
+
+            <div class="field">
+                <label>ชื่อโครงการ/งานวิจัย (en)</label>
+                <input type="text" placeholder="ชื่อโครงการ/งานวิจัย (en)" ng-model="project.name_en">
+            </div>
+
+        </div>
+
+        <h4 class="ui dividing header"></h4>
+
+        <div class="three fields">
+
+            <div class="ui floating dropdown labeled search icon button">
+                <i class="world icon"></i>
+
+                <div ng-if="!project.user">
+                    <span class="text">เลือกหัวหน้าโครงการวิจัยผู้รับทุน</span>
+                </div>
+                <span class="text">{{project.user.firstname_th}}  {{project.user.lastname_th}}</span>
+
+                <div class="menu">
+                    <div class="item" ng-repeat="user in users" ng-click="selectUser(user)">
+                        {{ user.firstname_th }} {{ user.lastname_th}}
+                    </div>
+                </div>
+            </div>
+
+            <div class="ui floating dropdown labeled search icon button">
+                <i class="world icon"></i>
+
+                <div ng-if="!project.faculty">
+                    <span class="text">เลือกคณะ/หน่วยงาน</span>
+                </div>
+                <span class="text">{{project.faculty.name_th}}</span>
+
+                <div class="menu">
+                    <div class="item" ng-repeat="faculty in facultys" ng-click="selectFaculty(faculty)">
+                        {{ faculty.name_th }}
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <div class="three fields">
-        <div class="field">
-            <label>ระยะเวลาดำเนินการ</label>
-            <input type="text" placeholder="ระยะเวลาดำเนินการ" ng-model="project.period">
+        <div class="three fields">
+            <div class="field">
+                <label>ระยะเวลาดำเนินการ</label>
+                <input type="text" placeholder="ระยะเวลาดำเนินการ" ng-model="project.period">
+            </div>
+            <div class="field">
+                <label>งบประมาณ</label>
+                <input type="text" placeholder="งบประมาณ" ng-model="project.projbudget">
+            </div>
         </div>
+
+        <h4 class="ui dividing header"></h4>
+
         <div class="field">
-            <label>งบประมาณ</label>
-            <input type="text" placeholder="งบประมาณ" ng-model="project.projbudget">
+            <label>1. ความสำคัญและที่มาของปัญหา</label>
+            <textarea ckeditor="editorOptions" name="problem" ng-model="project.problem"></textarea>
         </div>
-    </div>
 
-    <h4 class="ui dividing header"></h4>
+        <div class="field">
+            <label>2.วัตถุประสงค์</label>
+            <textarea ckeditor="editorOptions" ng-model="project.purpose"></textarea>
+        </div>
 
-    <div class="field">
-        <label>1. ความสำคัญและที่มาของปัญหา</label>
-        <textarea ckeditor="editorOptions" name="problem" ng-model="project.problem"></textarea>
-    </div>
+        <div class="field">
+            <label>3.ระเบียบวิธีวิจัย</label>
+            <textarea ckeditor="editorOptions" ng-model="project.methodology"></textarea>
+        </div>
 
-    <div class="field">
-        <label>2.วัตถุประสงค์</label>
-        <textarea ckeditor="editorOptions" ng-model="project.purpose"></textarea>
-    </div>
+        <div class="field">
+            <label>4.แผนการดำเนินงานวิจัย</label>
+            <textarea ckeditor="editorOptions" ng-model="project.plan"></textarea>
+        </div>
 
-    <div class="field">
-        <label>3.ระเบียบวิธีวิจัย</label>
-        <textarea ckeditor="editorOptions" ng-model="project.methodology"></textarea>
-    </div>
+        <div class="field">
+            <label>5.ผลงาน/หัวข้อเรื่องที่คาดว่าจะตีพิมพ์ในวารสารวิชาการระดับชาติ/นานาชาติหรือนำไปใช้ประโยชน์ในด้านอื่นๆ</label>
+            <textarea ckeditor="editorOptions" ng-model="project.publish"></textarea>
+        </div>
 
-    <div class="field">
-        <label>4.แผนการดำเนินงานวิจัย</label>
-        <textarea ckeditor="editorOptions" ng-model="project.plan"></textarea>
-    </div>
+        <h4 class="ui dividing header">รายชื่อผู้ทำงานในโครงการ</h4>
 
-    <div class="field">
-        <label>5.ผลงาน/หัวข้อเรื่องที่คาดว่าจะตีพิมพ์ในวารสารวิชาการระดับชาติ/นานาชาติหรือนำไปใช้ประโยชน์ในด้านอื่นๆ</label>
-        <textarea ckeditor="editorOptions" ng-model="project.publish"></textarea>
-    </div>
+        <div class="field">
+            <textarea ckeditor="editorOptions" ng-model="project.coresearcher"></textarea>
+        </div>
 
-    <h4 class="ui dividing header">รายชื่อผู้ทำงานในโครงการ</h4>
-    <div class="field">
-        <textarea ckeditor="editorOptions" ng-model="project.coresearcher"></textarea>
-    </div>
+        <div></br></div>
 
-    <div></br></div>
+        <div class="">
+            <button type="submit" class="ui primary submit button">บันทึกข้อมูล</button>
+            <button type="button" ui-sref="list" class="ui red submit button">ยกเลิก</button>
+        </div>
 
-    <div class="">
-        <button type="submit" class="ui primary submit button">บันทึกข้อมูล</button>
-        <button type="button" ui-sref="list" class="ui red submit button">ยกเลิก</button>
-    </div>
+    </form>
+</div>
 
-</form>
+<div class="ui tab" data-tab="form002">
+    <h4 class="ui dividing header">ICT_วจ_002_แบบฟอร์มรายละเอียดการจ่ายเงินอุดหนุนโครงการวิจัย</h4>
+</div>
+
+<div class="ui tab" data-tab="form003">
+    <h4 class="ui dividing header">ICT_วจ_005_แบบฟอร์มรายงานความก้าวหน้าของโครงการวิจัย</h4>
+</div>
+
+<div class="ui tab" data-tab="form004">
+    <h4 class="ui dividing header">ICT_วจ_004_แบบขออนุมัติเบิกเงินอุดหนุนการวิจัย</h4>
+</div>
+
+<div class="ui tab" data-tab="form005">
+    <h4 class="ui dividing header">ICT_วจ_005_แบบฟอร์มรายงานความก้าวหน้าของโครงการวิจัย</h4>
+</div>
+
+<div class="ui tab" data-tab="form006">
+    <h4 class="ui dividing header">ICT_วจ_006_แบบฟอร์มรายงานการเงิน</h4>
+</div>
+
+<div class="ui tab" data-tab="form007">
+    <h4 class="ui dividing header">ICT_วจ_007_แบบขออนุมัติปิดโครงการ</h4>
+</div>
+
+<div class="ui tab" data-tab="form008">
+    <h4 class="ui dividing header">ICT_วจ_008_รูปแบบการพิมพ์รายงานฉบับสมบูรณ์</h4>
+</div>
+
+<div class="ui tab" data-tab="form009">
+    <h4 class="ui dividing header">ICT_วจ_009_แบบขออนุมัติปรับแผนงบประมาณโครงการวิจัย</h4>
+</div>
+
+<div class="ui tab" data-tab="form010">
+    <h4 class="ui dividing header">ICT_วจ_010_แบบขออนุมัติขยายเวลา</h4>
+</div>
+
+<div class="ui tab" data-tab="form011">
+    <h4 class="ui dividing header">ICT_วจ_011_แบบฟอร์มรายงานตัวชี้วัดเพื่อประเมินผลสำเร็จโครงการ</h4>
+</div>
+
+<div class="ui tab" data-tab="form012">
+    <h4 class="ui dividing header">ICT_วจ_012 แบบโอนครุภัณฑ์</h4>
+</div>
 
 <script type="text/javascript">
     $('.ui.accordion').accordion();
     $('.ui.dropdown').dropdown();
+    $('.menu .item').tab();
 </script>

@@ -7,7 +7,32 @@ use App\Models\Faculty;
 
 class DatabaseSeeder extends Seeder {
 
+    private function initUser(){
+        $users = [
+            ["admin", "admin", "นาย", "ชื่อ", "สกุล", "firstname", "lastname", "Mr.", "1", "1", "1", "1", "1", "admin_education", "admin_instiution"],
+            ["test", "test", "นาย", "test", "test", "firstname", "lastname", "Mr.", "1", "1", "1", "1", "1", "test_education", "test_instiution"]
+        ];
 
+        foreach($users as $u){
+            $user = new \App\Models\User();
+            $user->username = $u[0];
+            $user->password = $u[1];
+            $user->prefixname_th = $u[2];
+            $user->firstname_th = $u[3];
+            $user->lastname_th = $u[4];
+            $user->firstname_en = $u[5];
+            $user->lastname_en = $u[6];
+            $user->prefixname_en = $u[7];
+            $user->faculty_id = $u[8];
+            $user->major_id = $u[9];
+            $user->type_id = $u[10];
+            $user->position_id = $u[11];
+            $user->degree_id = $u[12];
+            $user->user_education = $u[13];
+            $user->user_institution = $u[14];
+            $user->save();
+        }
+    }
     private function initRoles(){
 
         $roles = ["Administrator","Researcher"];
@@ -121,12 +146,14 @@ class DatabaseSeeder extends Seeder {
 	{
 		Model::unguard();
 
+        $this->initUser();
         $this->initRoles();
         $this->initMajors();
         $this->initTypes();
         $this->initPositions();
         $this->initDegrees();
         $this->initBudget();
+
 
 		$fac1 = new Faculty();
         $fac1->name_th = "คณะเทคโนโลยีสารสนเทศและการสื่อสาร";
