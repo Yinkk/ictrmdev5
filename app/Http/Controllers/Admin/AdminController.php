@@ -48,6 +48,10 @@ class AdminController extends  Controller {
     public function project(){
         return view("admin.project");
     }
+
+    public function fileentry(){
+        return view("admin.fileentry");
+    }
 //    public function position(){
 //        return view("admin.position");
 //    }

@@ -156,6 +156,19 @@
 
 <div class="ui tab" data-tab="form002">
     <h4 class="ui dividing header">ICT_วจ_002_แบบฟอร์มรายละเอียดการจ่ายเงินอุดหนุนโครงการวิจัย</h4>
+
+    <form action="add" method="post" enctype="multipart/form-data">
+        <input type="file" name="filefield">
+        <input type="submit">
+    </form>
+
+    <h1>Pictures list</h1>
+
+    <div class="row">
+        <ul>
+            <li>{{entry->filename}}</li>
+        </ul>
+    </div>
 </div>
 
 <div class="ui tab" data-tab="form003">

@@ -21,7 +21,6 @@
 </head>
 
 <body>
-
 <div class="ui" style="background-color: #4c1d6e">
     <h2 class="ui header inverted" style="padding: 10px;">
         <div class="content">
