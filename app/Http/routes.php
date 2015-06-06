@@ -36,7 +36,7 @@ Route::group(['prefix' => 'api'], function () {
     Route::resource('position', 'Api\PositionApiController');
     Route::resource('degree', 'Api\DegreeApiController');
     Route::resource('project', 'Api\ProjectApiController');
-    Route::resource('fileentry', 'Api\ProjectApiController');
+
 });
 
 Route::get('/admin/home', 'Admin\AdminController@index');
@@ -48,13 +48,6 @@ Route::get('/admin/budget', 'Admin\AdminController@budget');
 Route::get('/admin/faculty', 'Admin\AdminController@faculty');
 Route::get('/admin/type', 'Admin\AdminController@type');
 Route::get('/admin/project', 'Admin\AdminController@project');
-Route::get('/admin/fileentry', 'Admin\AdminController@fileentry');
 
-
-//Route::get('fileentry', 'FileEntryController@index');
-//Route::get('fileentry/get/{filename}', [
-//    'as' => 'getentry', 'uses' => 'FileEntryController@get']);
-//Route::post('fileentry/add',[
-//    'as' => 'addentry', 'uses' => 'FileEntryController@add']);
 
 
