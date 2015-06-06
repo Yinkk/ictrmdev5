@@ -1,0 +1,137 @@
+<form ng-submit="save()" class="ui form">
+    <div class="ui dividing header">
+        <h3>
+            โครงการ/งานวิจัย
+            <small>แก้ไข</small>
+
+            <div class="pull-right">
+                <a ui-sref="list" class="btn btn-sm btn-default"><i
+                        class="fa fa-reply"></i>กลับ</a>
+            </div>
+        </h3>
+    </div>
+
+    <h4 class="ui dividing header">สรุปข้อเสนอโครงการ</h4>
+
+    <div class="three fields">
+        <div class="field">
+            <label>สัญญาเลขที่</label>
+            <input type="text" placeholder="สัญญาเลขที่" ng-model="project.contract">
+        </div>
+
+        <div class="ui floating dropdown labeled search icon button">
+            <i class="world icon"></i>
+
+            <div ng-if="!project.budget">
+                <span class="text">เลือกปีงบประมาณ</span>
+            </div>
+            <span class="text">{{project.budget.year}}</span>
+
+            <div class="menu">
+                <div class="item" ng-repeat="budget in budgets" ng-click="selectBudget(budget)">
+                    {{budget.year}}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="three fields">
+        <div class="field">
+            <label>ชื่อโครงการ/งานวิจัย (th)</label>
+            <input type="text" placeholder="ชื่อโครงการ/งานวิจัย (th)" ng-model="project.name_th">
+        </div>
+
+        <div class="field">
+            <label>ชื่อโครงการ/งานวิจัย (en)</label>
+            <input type="text" placeholder="ชื่อโครงการ/งานวิจัย (en)" ng-model="project.name_en">
+        </div>
+
+    </div>
+
+    <h4 class="ui dividing header"></h4>
+
+    <div class="three fields">
+
+        <div class="ui floating dropdown labeled search icon button">
+            <i class="world icon"></i>
+
+            <div ng-if="!project.user">
+                <span class="text">เลือกหัวหน้าโครงการวิจัยผู้รับทุน</span>
+            </div>
+            <span class="text">{{project.user.firstname_th}}  {{project.user.lastname_th}}</span>
+
+            <div class="menu">
+                <div class="item" ng-repeat="user in users" ng-click="selectUser(user)">
+                    {{ user.firstname_th }} {{ user.lastname_th}}
+                </div>
+            </div>
+        </div>
+
+        <div class="ui floating dropdown labeled search icon button">
+            <i class="world icon"></i>
+
+            <div ng-if="!project.faculty">
+                <span class="text">เลือกคณะ/หน่วยงาน</span>
+            </div>
+            <span class="text">{{project.faculty.name_th}}</span>
+
+            <div class="menu">
+                <div class="item" ng-repeat="faculty in facultys" ng-click="selectFaculty(faculty)">
+                    {{ faculty.name_th }}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="three fields">
+        <div class="field">
+            <label>ระยะเวลาดำเนินการ</label>
+            <input type="text" placeholder="ระยะเวลาดำเนินการ" ng-model="project.period">
+        </div>
+        <div class="field">
+            <label>งบประมาณ</label>
+            <input type="text" placeholder="งบประมาณ" ng-model="project.projbudget">
+        </div>
+    </div>
+
+    <h4 class="ui dividing header"></h4>
+
+    <div class="field">
+        <label>1. ความสำคัญและที่มาของปัญหา</label>
+        <textarea ckeditor="editorOptions" name="problem" ng-model="project.problem"></textarea>
+    </div>
+
+    <div class="field">
+        <label>2.วัตถุประสงค์</label>
+        <textarea ckeditor="editorOptions" ng-model="project.purpose"></textarea>
+    </div>
+
+    <div class="field">
+        <label>3.ระเบียบวิธีวิจัย</label>
+        <textarea ckeditor="editorOptions" ng-model="project.methodology"></textarea>
+    </div>
+
+    <div class="field">
+        <label>4.แผนการดำเนินงานวิจัย</label>
+        <textarea ckeditor="editorOptions" ng-model="project.plan"></textarea>
+    </div>
+
+    <div class="field">
+        <label>5.ผลงาน/หัวข้อเรื่องที่คาดว่าจะตีพิมพ์ในวารสารวิชาการระดับชาติ/นานาชาติหรือนำไปใช้ประโยชน์ในด้านอื่นๆ</label>
+        <textarea ckeditor="editorOptions" ng-model="project.publish"></textarea>
+    </div>
+
+    <h4 class="ui dividing header">รายชื่อผู้ทำงานในโครงการ</h4>
+
+    <div class="field">
+        <textarea ckeditor="editorOptions" ng-model="project.coresearcher"></textarea>
+    </div>
+
+    <div></br></div>
+
+    <div class="">
+        <button type="submit" class="ui primary submit button">บันทึกข้อมูล</button>
+        <button type="button" ui-sref="list" class="ui red submit button">ยกเลิก</button>
+    </div>
+
+</form>
