@@ -21,7 +21,6 @@ class ProjectApiController extends Controller {
      */
     public function index()
     {
-
         return $this->service->all();
     }
 

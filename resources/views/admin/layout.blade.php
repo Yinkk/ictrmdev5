@@ -144,6 +144,9 @@
 <script type="text/javascript" src="/bower_components/angular-datatables/dist/angular-datatables.min.js"></script>
 <script type="text/javascript" src="/bower_components/angular-datatables/dist/plugins/bootstrap/angular-datatables.bootstrap.min.js"></script>
 
+<script type="text/javascript" src="/bower_components/flow.js/dist/flow.min.js"></script>
+<script type="text/javascript" src="/bower_components/ng-flow/dist/ng-flow.min.js"></script>
+
 <script type="text/javascript">
     $('.ui.dropdown').dropdown();
 </script>
