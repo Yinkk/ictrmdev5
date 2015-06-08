@@ -37,6 +37,10 @@ Route::group(['prefix' => 'api'], function () {
     Route::resource('degree', 'Api\DegreeApiController');
     Route::resource('project', 'Api\ProjectApiController');
 
+    Route::resource('project.file', 'API\ProjectFileApiController');
+
+    Route::post('project/{id}/saveProjectFile','Api\"ProjectApiController@saveProjectFile');
+
 });
 
 Route::get('/admin/home', 'Admin\AdminController@index');

@@ -1,1 +1,31 @@
-<h4 class="ui dividing header">ICT_วจ_002_แบบฟอร์มรายละเอียดการจ่ายเงินอุดหนุนโครงการวิจัย</h4>
+<form class="ui form" ng-submit="save()">
+
+    <div flow-init flow-object="myFlow">
+
+        <span class="ui positive button" flow-btn>Add Files</span>
+        Input OR Other element as upload button
+        <span class="btn" flow-btn>Upload File</span>
+
+        <table>
+            <tr ng-repeat="file in $flow.files">
+                <td>{{$index+1}}</td>
+                <td>{{file.name}}</td>
+                <td>{{file.msg}}</td>
+            </tr>
+        </table>
+    </div>
+
+
+    <table>
+        <tr ng-repeat="file in files">
+            <td>{{file.id}}</td>
+            <td>{{file.url}}</td>
+            <td>{{file.filetype_id}}</td>
+        </tr>
+    </table>
+
+
+    <button type="button" class="ui primary button" ng-click="uploadFile()" >Upload</button>
+    <button type="submit" class="ui primary button">Save & Close</button>
+    <button type="button" ui-sref="home" class="ui button">Close</button>
+</form>

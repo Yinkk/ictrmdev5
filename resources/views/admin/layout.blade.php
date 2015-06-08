@@ -1,6 +1,7 @@
 <html>
 
 <head>
+    <meta name="csrf_token" value="<?php echo csrf_token(); ?>">
     <mata charset="utf-8">
         <title>ระบบบริหารงานวิจัยคณะเทคโนโลยีสารสนเทศและการสื่อสาร</title>
 
@@ -141,6 +142,7 @@
 <script type="text/javascript" src="/bower_components/angular/angular.min.js"></script>
 <script src="/bower_components/ng-ckeditor/ng-ckeditor.js"></script>
 <script type="text/javascript" src="/bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+<script type="text/javascript" src="/bower_components/angular-cookies/angular-cookies.min.js"></script>
 <script type="text/javascript" src="/bower_components/angular-datatables/dist/angular-datatables.min.js"></script>
 <script type="text/javascript" src="/bower_components/angular-datatables/dist/plugins/bootstrap/angular-datatables.bootstrap.min.js"></script>
 

@@ -39,7 +39,7 @@ class ProjectApiController extends Controller {
      *
      * @return Response
      */
-    public function store()
+    public function store(Requests\StoreProjectPostRequest $projectPostRequest)
     {
         return $this->service->store(Input::all());
     }

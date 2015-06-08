@@ -9,7 +9,7 @@
 @section('javascript')
     <script type="text/javascript">
 
-        var app = angular.module("ProjectApp", ['ui.router','ngCkeditor']);
+        var app = angular.module("ProjectApp", ['ui.router','ngCkeditor', 'flow','ngCookies']);
 
         app.config(function ($stateProvider, $urlRouterProvider) {
 
@@ -146,7 +146,7 @@
             }
         })
 
-        app.controller("EditCtrl", function ($scope, $http, $state, project, budgets, users, facultys) {
+        app.controller("EditCtrl", function ($scope, $http, $state, project, budgets, users, facultys,$cookies) {
             console.log("EditCtrl Start..")
 
 
@@ -154,6 +154,19 @@
             $scope.budgets = budgets.data;
             $scope.users = users.data;
             $scope.facultys = facultys.data;
+
+            $scope.filetype = 2;
+            $scope.fileTypeChange = function(id){
+                console.log(id);
+                $scope.filetype = id;
+
+                $http.get('/api/project/'+$scope.project.id+'/file?filetype_id='+id).success(function(response){
+                    $scope.files = response;
+
+                    console.log(response);
+                })
+
+            }
 
 
 
@@ -168,6 +181,40 @@
             //console.log($scope.project.user);
             $scope.selectFaculty = function(faculty){
                 $scope.project.faculty = faculty;
+            }
+
+            console.log($cookies.get('XSRF-TOKEN'));
+
+            $scope.myFlow = new Flow({
+                target: '/api/project/' + $scope.project.id + '/file',
+                singleFile: true,
+                method: 'post',
+                testChunks: false,
+                headers: function (file, chunk, isTest) {
+                    return {
+                        'X-XSRF-TOKEN': $cookies.get('XSRF-TOKEN')// call func for getting a cookie
+                    }
+                },
+                query : function(file,chunk,isTest){
+                    return {
+                        'filetype_id' : $scope.filetype
+                    }
+                }
+            })
+
+            $scope.myFlow.on('fileSuccess',function(file,msg,chunk){
+                console.log(msg);
+                $scope.files.push(JSON.parse(msg))
+            })
+
+            $scope.uploadFile = function () {
+                $scope.myFlow.upload();
+            }
+
+            $scope.cancelFile = function (file) {
+                var index = $scope.myFlow.files.indexOf(file)
+                $scope.myFlow.files.splice(index, 1);
+
             }
 
             $scope.save = function () {
