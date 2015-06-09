@@ -16,16 +16,25 @@
     </div>
 
 
-    <table>
+    <table class="ui celled striped table">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>File Name</th>
+            <th>Date Create</th>
+            <th>Management</th>
+        </tr>
+        </thead>
+        <tbody>
         <tr ng-repeat="file in files">
             <td>{{file.id}}</td>
-            <td>{{file.url}}</td>
-            <td>{{file.filetype_id}}</td>
+            <td><a target="_blank" href="{{file.url}}">{{file.filename}}</a></td>
+            <td>{{file.created_at}}</td>
+            <td><button ng-click="deleteProjectFile(file)" type="button" class="ui default submit button">Remove</button></td>
         </tr>
+        </tbody>
+
     </table>
 
-
-    <button type="button" class="ui primary button" ng-click="uploadFile()" >Upload</button>
-    <button type="submit" class="ui primary button">Save & Close</button>
-    <button type="button" ui-sref="home" class="ui button">Close</button>
+    <button type="button" class="ui primary button" ng-click="uploadFile()">Upload</button>
 </form>

@@ -168,17 +168,14 @@
 
             }
 
-
-
             $scope.selectBudget = function(budget){
                 $scope.project.budget = budget;
             }
-            //console.log($scope.project.faculty);
-            //console.log($scope.project.budget);
+
             $scope.selectUser = function(user){
                 $scope.project.user = user;
             }
-            //console.log($scope.project.user);
+
             $scope.selectFaculty = function(faculty){
                 $scope.project.faculty = faculty;
             }
@@ -211,11 +208,22 @@
                 $scope.myFlow.upload();
             }
 
-            $scope.cancelFile = function (file) {
-                var index = $scope.myFlow.files.indexOf(file)
-                $scope.myFlow.files.splice(index, 1);
-
+            $scope.deleteProjectFile = function (file) {
+                if (confirm("Are you sure to delete this file [id:" + file.id + "]?")) {
+                    $http({
+                        url: '/api/project/'+$scope.project.id+'/file/' + file.id,
+                        method: 'delete',
+                        data: file
+                    }).success(function (response) {
+                        var index = $scope.files.indexOf(file);
+                        $scope.files.splice(index,1);
+                    })
+                }
             }
+//            $scope.cancelFile = function (file) {
+//                var index = $scope.myFlow.files.indexOf(file)
+//                $scope.myFlow.files.splice(index, 1);
+//            }
 
             $scope.save = function () {
                 console.log($scope.project);

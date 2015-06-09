@@ -16,6 +16,7 @@ class CreateFileTable extends Migration {
             $table->bigIncrements('id');
             $table->bigInteger('project_id');
             $table->bigInteger('filetype_id');
+            $table->string('filename');
             $table->string('url');
             $table->timestamps();
         });

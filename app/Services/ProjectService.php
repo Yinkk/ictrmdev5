@@ -128,12 +128,15 @@ class ProjectService extends Service
         $public_path = "/project/$projectId/file/"; // พาธ
 
         $destination_path = public_path($public_path); // เอาไว้ใน storage ถ้าเอาไว้ public ใช้ public_path($path)
-
+        $original_filename = $input->file('file')->getClientOriginalName();
+        //$original_type = $input->file('file')->getClientOriginalExtension();
+        $original_fullname = $original_filename;
         $input->file('file')->move($destination_path, $uuid); // save ไฟล์
 
         $file = new File();
 
         $file->url = "/project/$projectId/file/$uuid";
+        $file->filename = $original_fullname;
         $file->filetype_id = $input->get('filetype_id');
         $file->save();
         $project->files()->save($file);
@@ -144,7 +147,8 @@ class ProjectService extends Service
     public function deleteProjectFile($projectId,$fileId){
         $project = Project::find($projectId);
         $file = File::find($fileId);
-        $project->files()->detatch($file->id);
+        /* @var File $file */
+        $file->delete();
 
         return $file;
     }
